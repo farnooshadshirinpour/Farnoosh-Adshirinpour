@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Farnoosh Adshirinpour</title>
+<meta name="description" content="Bodies of work by Farnoosh Adshirinpour: digital portraits, Biophilia, Rocks, Mountains, charcoal interiors, and the Femme ink series.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+  @font-face { font-family: 'Farnoosh Hand'; src: url('farnoosh-hand.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  html { color-scheme: light; }
+  html { scroll-padding-top: 96px; }
+  body { margin: 0; }
+  img, video { max-width: 100%; }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --bg: #FBF5D3;
+    --fg: #372F2D;
+    --pen: #1E3970;
+    --muted: #776049;
+    --rule: #CDB065;
+    --accent: #652A2E;
+    --accent2: #B86B44;
+    --c-pink: #DCA5AA;  --c-blush: #DEBFB7; --c-terra: #B86B44; --c-burg: #652A2E;
+    --c-mustard: #CDB065; --c-sand: #D3B37C; --c-olive: #646143; --c-green: #718E3F;
+    --c-navy: #1E3970;  --c-teal: #699497;  --c-grey: #9A988C;  --c-taupe: #B4A3A6;
+    --c-ink: #372F2D;   --c-cream: #FBF5D3; --c-lime: #C2C760;
+    --font-display: 'Farnoosh Hand', 'Caveat', 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive;
+    --font-body: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --font-mono: var(--font-body);
+    --wob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='9'%3E%3Cpath d='M0 4.5 C18 2 36 7 58 4.2 S98 2 120 4.8 S170 7 192 4 S210 3 220 4.5' fill='none' stroke='%23372F2D' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+    --wob2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='9'%3E%3Cpath d='M0 4.6 C22 2.2 40 6.8 66 4 S112 2.4 140 5 S196 6.8 224 3.8 S248 3.4 260 4.6' fill='none' stroke='%23372F2D' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+    --squig: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='12'%3E%3Cpath d='M0 7 C7 1 13 1 20 7 S33 13 40 7 S53 1 60 7' fill='none' stroke='%23B86B44' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+    --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .24 0 0 0 0 .2 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --blob: 255px 18px 225px 18px / 18px 225px 18px 255px;
+    --blob2: 18px 240px 20px 250px / 250px 20px 240px 18px;
+  }
+
+  body {
+    background: var(--bg) var(--paper); color: var(--fg);
+    font-family: var(--font-body); font-size: 1.5rem; line-height: 1.4;
+    -webkit-font-smoothing: antialiased; -webkit-text-stroke: 0.3px currentColor; letter-spacing: -0.015em; word-spacing: 0.22em;
+    font-synthesis: none;
+  }
+  .wrap {
+    max-width: 76rem; margin-inline: auto;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+  }
+  .wrap > *, .row > * { min-width: 0; }
+
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1; margin: 0; letter-spacing: -0.02em; word-spacing: 0.12em; text-wrap: balance; -webkit-text-stroke: 0; }
+  h1 em, h2 em, h3 em { font-style: normal; color: var(--accent); }
+  h2 { font-size: clamp(2.8rem, 5.4vw, 4rem); }
+  h3 { font-size: 2.1rem; line-height: 1.05; }
+  p { margin: 0; max-width: 40ch; }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent2); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 4px; }
+  code { font-family: var(--font-display); font-size: 1em; color: var(--pen); }
+  .mono { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.01em; text-transform: none; color: var(--muted); font-weight: 400; line-height: 1.15; }
+  .mono b { color: var(--fg); font-weight: 400; }
+  .hand-note { display: inline-block; font-family: var(--font-display); color: var(--pen); font-size: 1.45rem; line-height: 1.05; transform: rotate(var(--r, -2deg)); max-width: 16ch; letter-spacing: -0.02em; }
+  .mark { display: block; width: 7rem; height: 1rem; background: var(--pc, var(--c-terra)); border-radius: var(--blob); transform: rotate(-1.5deg); opacity: .92; }
+
+  /* top bar */
+  .bar { position: sticky; top: 0; z-index: 20; background: var(--bg) var(--paper); padding-bottom: 9px; }
+  .bar::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 9px; background: var(--wob) repeat-x 0 0 / 220px 9px; }
+  .bar-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding-block: 10px 6px; }
+  .brand { font-family: var(--font-display); font-size: 2.3rem; line-height: 1; text-decoration: none; letter-spacing: -0.02em; word-spacing: 0.1em; -webkit-text-stroke: 0; }
+  .brand:hover { color: var(--accent); }
+  nav { display: flex; flex-wrap: wrap; gap: 2px 26px; }
+  nav a { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: -0.01em; text-decoration: none; padding: 2px 4px; background: none; }
+  nav a:hover { color: var(--accent); }
+  nav a[aria-current="page"] { background: var(--squig) repeat-x 0 100% / 40px 9px; padding-bottom: 8px; }
+
+  main { display: block; }
+
+  /* ---------- home ---------- */
+  .h-meta { display: flex; justify-content: space-between; gap: 12px; padding-top: 22px; }
+  .h-title { position: relative; }
+  .h-name { font-size: clamp(4.8rem, 16vw, 13.5rem); line-height: 0.82; margin-top: 8px; position: relative; z-index: 3; -webkit-text-stroke: 0; }
+  .h-name span { display: block; }
+  .h-name .l2 { padding-left: 9%; color: var(--accent); }
+  .h-name .l2 b { font-weight: 400; display: inline-block; padding-bottom: .12em; background: var(--squig) repeat-x 0 100% / 60px 12px; }
+  .doodle { position: absolute; z-index: 4; overflow: visible; fill: none; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+  .d-star { right: 6%; top: 4%; width: clamp(3rem, 8vw, 6rem); stroke: var(--c-terra); stroke-width: 3; }
+  .d-spark { left: 64%; top: 34%; width: clamp(1.6rem, 3.6vw, 2.8rem); stroke: var(--pen); stroke-width: 3; }
+  .h-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; align-items: start; }
+  .h-side { grid-column: 1 / span 5; display: grid; gap: 36px; padding-top: 52px; }
+  .h-side .tag { letter-spacing: -0.02em; word-spacing: 0.12em; font-family: var(--font-display); font-size: 2.9rem; line-height: 0.98; -webkit-text-stroke: 0; }
+  .h-side p.intro { font-size: 1.5rem; }
+  .h-fig { display: grid; gap: 10px; margin: 0; position: relative; }
+  .h-fig a.thumb { display: block; background: #FFFEF6; padding: 8px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 10px 22px -8px rgba(55,47,45,.35); transform: rotate(-1deg); }
+  .h-fig img { display: block; width: 100%; height: auto; }
+  .h-fig .hand-note { margin-top: 6px; }
+  .h-art { grid-column: 8 / -1; position: relative; margin-top: 0.6rem; z-index: 1; padding: 0 30px 34px 0; }
+  .h-art .pad { position: relative; transform: rotate(0.6deg); }
+  .h-art .pad::before { content: ""; position: absolute; inset: 22px -26px -26px 22px; background: var(--c-burg); z-index: 0; border-radius: var(--blob2); transform: rotate(1.6deg); }
+  .h-art a.main { display: block; position: relative; z-index: 1; background: #FFFEF6; padding: 10px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 12px 24px -8px rgba(55,47,45,.4); }
+  .h-art img, .h-art video { display: block; width: 100%; height: auto; background: #FFFFE0; }
+  .h-art .tape { top: -14px; left: 12%; }
+  .h-art .hero-vid { cursor: pointer; }
+  .h-art .sq { position: absolute; z-index: 2; border-radius: var(--blob); }
+  .h-art .sq1 { width: 3.4rem; height: 3.4rem; background: var(--c-mustard); left: -1.7rem; bottom: 22%; transform: rotate(-6deg); }
+  .h-art .sq2 { display: none; }
+  .h-cap { display: flex; justify-content: space-between; gap: 16px; padding-top: 52px; }
+  .target { position: absolute; inset: -14px; pointer-events: none; z-index: 3; }
+  .target svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .target rect { fill: none; stroke: var(--c-terra); stroke-width: 2.5; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.8s cubic-bezier(.6,.05,.25,1) .5s forwards; }
+  .target i { position: absolute; font-family: var(--font-display); font-style: normal; font-size: 1.3rem; line-height: 1; color: var(--c-cream); background: var(--c-ink); padding: 2px 8px 3px; border-radius: var(--blob); opacity: 0; animation: fade .8s ease 2.6s forwards; white-space: nowrap; -webkit-text-stroke: 0; }
+  .target .pa { left: 0; top: 0; transform: translate(-50%, -50%); } .target .pb { right: 0; top: 0; transform: translate(50%, -50%); }
+  .target .pc { right: 0; bottom: 0; transform: translate(50%, 50%); } .target .pd { left: 0; bottom: 0; transform: translate(-50%, 50%); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+
+  .feature { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: center; margin-top: 90px; }
+  .feature .f-txt { grid-column: 1 / span 4; display: grid; gap: 16px; }
+  .feature .f-txt h2 { font-size: clamp(2.8rem, 5vw, 4rem); }
+  .feature .f-vid { grid-column: 5 / -1; background: var(--c-navy); padding: 28px; border-radius: var(--blob2); transform: rotate(.5deg); position: relative; }
+  .feature .f-vid .tape { top: -13px; left: 20%; margin-left: 0; --tape: rgba(251, 245, 211, .85); }
+  .feature .shot { background: #000; border: 8px solid #FFFEF6; box-shadow: 0 10px 20px -8px rgba(0,0,0,.5); }
+  .feature .shot video { display: block; width: 100%; height: auto; }
+  .feature .f-cap { color: var(--c-cream); font-family: var(--font-display); font-size: 1.25rem; padding-top: 10px; -webkit-text-stroke: 0.2px currentColor; }
+  .index { margin-top: 90px; padding-top: 18px; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
+  .index a { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 2rem; gap: 8px 32px; align-items: center; padding: 20px 0 30px; background: var(--wob) repeat-x 0 100% / 220px 9px; text-decoration: none; transition: padding-left .3s ease, color .2s ease; }
+  .index a:hover { padding-left: 14px; color: var(--accent); }
+  .index .t { letter-spacing: -0.02em; word-spacing: 0.1em; font-family: var(--font-display); font-size: clamp(3rem, 6.4vw, 4.8rem); line-height: 1; display: flex; align-items: center; gap: 20px; -webkit-text-stroke: 0; }
+  .index .t i { flex: none; width: 1.5rem; height: 1.5rem; border: 2px solid var(--pc); border-radius: var(--blob); background: repeating-linear-gradient(135deg, var(--pc) 0 2.5px, transparent 2.5px 6px); transform: rotate(-4deg); }
+  .index .d { font-size: 1.4rem; color: var(--muted); }
+  .index .go { text-align: right; font-family: var(--font-display); font-size: 2rem; }
+
+  /* ---------- page heads ---------- */
+  .p-head { padding-block: 50px 36px; display: grid; gap: 18px; }
+  .p-head .top { display: flex; justify-content: space-between; gap: 12px; }
+  .p-title { font-size: clamp(3.8rem, 11.5vw, 9rem); line-height: 0.86; max-width: 14ch; -webkit-text-stroke: 0; }
+  .p-sub { font-size: 1.6rem; max-width: 38ch; }
+  .rule { border: 0; height: 9px; margin: 0; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
+
+  /* ---------- about ---------- */
+  .hand-line { font-family: var(--font-display); font-size: 1.9rem; line-height: 1.5; color: var(--pen); max-width: 52ch; padding-bottom: 10px; background: var(--squig) repeat-x 0 100% / 60px 12px; transform: rotate(-.6deg); }
+  .about { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px 24px; padding-block: 36px 96px; align-items: start; }
+  .about .text { grid-column: 4 / span 6; grid-row: 1; display: grid; gap: 22px; font-size: 1.65rem; line-height: 1.3; }
+  .about .glance { grid-column: 1 / span 3; grid-row: 1; margin: 0; display: grid; gap: 18px; align-content: start; }
+  .glance div { display: grid; gap: 0; padding-top: 16px; background: var(--wob) repeat-x 0 0 / 220px 9px; }
+  .glance dt { font-family: var(--font-display); font-size: 1.15rem; color: var(--muted); }
+  .glance dd { margin: 0; font-size: 1.45rem; line-height: 1.1; color: var(--fg); }
+  .about .side-art { grid-column: 11 / -1; grid-row: 1; margin: 0; display: grid; gap: 9px; position: relative; padding-top: 10px; }
+  .about .side-art .art { display: block; position: relative; background: #FFFEF6; padding: 8px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 10px 22px -8px rgba(55,47,45,.35); transform: rotate(1.6deg); }
+  .about .side-art img { display: block; width: 100%; height: auto; }
+  .about .side-art figcaption { padding-top: 10px; }
+  .next { display: flex; flex-wrap: wrap; gap: 8px 40px; padding-block: 22px 0; background: var(--wob2) repeat-x 0 0 / 260px 9px; margin-bottom: 96px; }
+  .next a { font-size: 1.7rem; font-family: var(--font-display); }
+
+  /* ---------- exhibition ---------- */
+  .band { padding-block: 64px 80px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; padding-top: 26px; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
+  .sec-head h2 { display: inline-block; padding: 0 .3em .06em .1em; background: linear-gradient(transparent 58%, var(--band, var(--c-sand)) 58%); border-radius: 6px 40px 8px 30px / 30px 8px 40px 6px; transform: rotate(-.8deg); -webkit-text-stroke: 0; }
+  .sec-head h2 em { color: var(--accent); }
+  .sec-head .sq { display: inline-block; width: 1rem; height: 1rem; background: var(--pc); margin-right: 14px; border-radius: var(--blob); }
+  .wall { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 64px 24px; align-items: start; margin-top: 52px; }
+  .plate { grid-column: var(--c, 1 / -1); margin-top: var(--mt, 0px); display: grid; gap: 12px; margin-bottom: 0; position: relative; transform: rotate(-.7deg); }
+  .plate:nth-child(3n+2) { transform: rotate(.8deg); }
+  .plate:nth-child(3n) { transform: rotate(-.2deg); }
+  .plate .art { display: block; overflow: hidden; background: #FFFEF6; padding: 9px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 12px 24px -10px rgba(55,47,45,.38); }
+  .plate img, .plate video { display: block; width: 100%; height: auto; transition: transform .6s ease; }
+  .plate .art:hover img { transform: scale(1.02); }
+  .plate figcaption { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01em; color: var(--pen); line-height: 1.1; }
+  .tape { position: absolute; top: -13px; left: 50%; width: 5.4rem; height: 1.7rem; margin-left: -2.7rem; background: var(--tape, rgba(205, 176, 101, .6)); transform: rotate(-4deg); z-index: 3; clip-path: polygon(3% 0, 97% 0, 100% 20%, 96% 40%, 100% 60%, 96% 80%, 100% 100%, 3% 100%, 0 80%, 4% 60%, 0 40%, 4% 20%); }
+  .plate:nth-child(even) .tape { transform: rotate(3deg); }
+  .plate:nth-child(3n) .tape { transform: rotate(-2deg); }
+  .note-line { margin-top: 14px; }
+  .intro-txt { margin-top: 22px; max-width: 56ch; font-size: 1.55rem; line-height: 1.3; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px 30px; padding-block: 8px 0; }
+  .chips a { font-family: var(--font-display); font-size: 1.7rem; text-decoration: none; padding-bottom: 6px; background: var(--squig) repeat-x 0 100% / 40px 9px; }
+  .chips a:hover { color: var(--accent); }
+  .band .next { margin-bottom: 0; }
+
+  /* ---------- projects ---------- */
+  .proj { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px 24px; padding-block: 60px 56px; background: var(--wob2) repeat-x 0 0 / 260px 9px; align-items: start; }
+  .proj:first-of-type { margin-top: 24px; }
+  .proj .meta { grid-column: 1 / span 3; display: grid; gap: 6px; align-content: start; }
+  .proj .meta .sq { width: 1.5rem; height: 1.5rem; border: 2px solid var(--pc); border-radius: var(--blob); background: repeating-linear-gradient(135deg, var(--pc) 0 2.5px, transparent 2.5px 6px); margin-bottom: 8px; transform: rotate(-4deg); }
+  .proj .txt { grid-column: 4 / span 4; display: grid; gap: 18px; }
+  .proj .txt .more { font-family: var(--font-display); font-size: 1.4rem; color: var(--pen); }
+  .proj .imgs { grid-column: 8 / -1; display: grid; gap: 14px; align-items: start; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); background: var(--pc); padding: 26px; border-radius: var(--blob2); transform: rotate(.5deg); position: relative; }
+  .proj .imgs img { display: block; width: 100%; height: auto; border: 6px solid #FFFEF6; box-shadow: 0 8px 16px -8px rgba(55,47,45,.45); }
+  .proj .imgs::before { content: ""; position: absolute; top: -12px; left: 18%; width: 5rem; height: 1.6rem; background: rgba(251, 245, 211, .85); transform: rotate(-4deg); clip-path: polygon(3% 0, 97% 0, 100% 25%, 96% 50%, 100% 75%, 97% 100%, 3% 100%, 0 75%, 4% 50%, 0 25%); z-index: 2; }
+  .proj .imgs .b { margin-top: 3rem; }
+  .proj .imgs.one { grid-template-columns: minmax(0, 1fr); }
+  .proj .imgs.three { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .proj .imgs.three .wide { grid-column: 1 / -1; }
+  .proj .imgs.three .b { margin-top: 0; }
+  .proj h2 { font-size: clamp(3rem, 5.2vw, 4.4rem); }
+  .projects-end { padding-bottom: 96px; }
+
+  /* ---------- prototype notebook ---------- */
+  .blk .row { background: var(--band); color: var(--band-ink); padding: 44px 40px; border-radius: var(--blob2); transform: rotate(-.35deg); margin-block: 30px; }
+  .blk .mono, .blk figure.fig figcaption { color: var(--band-muted); }
+  .blk figure.fig figcaption b { color: var(--band-ink); }
+  .blk a, .blk code { color: inherit; }
+  .blk .spec > div { background: none; border-top: 1.5px dashed rgba(251, 245, 211, .4); }
+  .blk .spec dt { color: var(--band-muted); }
+  .blk .row { border-top: 0 !important; }
+  .row { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 20px 48px; padding-block: 52px; background: var(--wob) repeat-x 0 0 / 220px 9px; }
+  .row.first { background: var(--wob2) repeat-x 0 0 / 260px 9px; margin-top: 16px; }
+  .row .label { padding-top: 6px; }
+  .row .body { display: grid; gap: 22px; max-width: 46rem; }
+  .row .body.full { max-width: none; }
+  .row h2 { font-size: clamp(2.8rem, 4.8vw, 3.8rem); }
+  figure.fig { margin: 0; display: grid; gap: 10px; }
+  figure.fig figcaption { font-size: 1.3rem; color: var(--muted); max-width: 44ch; line-height: 1.15; }
+  figure.fig figcaption b { font-family: var(--font-display); font-size: 1.3rem; color: var(--pen); font-weight: 400; margin-right: 8px; }
+  .shot { background: #000; border: 8px solid #FFFEF6; box-shadow: 0 10px 20px -8px rgba(0,0,0,.5); }
+  .shot video { display: block; width: 100%; height: auto; }
+  .diagram { max-width: 36rem; }
+  .diagram svg, .chart svg { display: block; width: 100%; height: auto; }
+  .s-grid { stroke: var(--rule); }
+  .s-target { stroke: var(--fg); }
+  .s-point { fill: var(--fg); }
+  .s-stroke { stroke: var(--accent2); }
+  .s-dim { stroke: var(--accent2); }
+  .s-label { fill: var(--pen); font-family: var(--font-display); font-size: 15px; }
+  .s-edge { fill: var(--muted); font-family: var(--font-display); font-size: 15px; }
+  .s-d { fill: var(--accent2); font-family: var(--font-display); font-size: 18px; }
+  .chart { max-width: 44rem; }
+  .c-grid { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 3 4; }
+  .c-axis { stroke: var(--fg); stroke-width: 1.5; }
+  .c-avg { fill: var(--pen); }
+  .c-max { fill: var(--accent2); }
+  .c-t { fill: var(--muted); font-family: var(--font-display); font-size: 15px; }
+  .c-v { fill: var(--fg); font-family: var(--font-display); font-size: 15px; }
+  .c-g { fill: var(--fg); font-family: var(--font-display); font-size: 17px; }
+  ol.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; counter-reset: step; }
+  ol.steps li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 12px; padding: 14px 0; border-top: 1.5px dashed var(--rule); counter-increment: step; max-width: 44ch; }
+  ol.steps li:first-child { border-top: 0; padding-top: 0; }
+  ol.steps li::before { content: counter(step) "."; font-family: var(--font-display); font-size: 1.7rem; color: var(--accent); padding-top: 0; line-height: 1; }
+  .spec { display: grid; margin: 0; }
+  .spec > div { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-top: 1.5px dashed var(--rule); }
+  .spec > div:first-child { border-top: 0; padding-top: 0; }
+  .spec dt { font-family: var(--font-display); font-size: 1.2rem; color: var(--muted); padding-top: 2px; }
+  .spec dd { margin: 0; }
+  .obs { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 12px; padding: 20px 0; border-top: 1.5px dashed var(--rule); max-width: 44ch; }
+  .obs:first-of-type { border-top: 0; padding-top: 4px; }
+  .obs .n { font-family: var(--font-display); font-size: 1.7rem; color: var(--accent); padding-top: 4px; line-height: 1; }
+  .obs h3 { margin-bottom: 6px; }
+  .table-wrap { overflow-x: auto; padding-block: 14px; background: var(--wob2) repeat-x 0 0 / 260px 9px, var(--wob2) repeat-x 0 100% / 260px 9px; }
+  table { border-collapse: collapse; width: 100%; min-width: 28rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 8px 14px 8px 0; border-bottom: 1.5px dashed var(--rule); font-size: 1.4rem; }
+  th { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; color: var(--muted); }
+  td.num, th.num { text-align: right; padding-right: 0; padding-left: 14px; }
+  tbody tr:last-child td { border-bottom: 0; }
+  .note { font-size: 1.3rem; color: var(--muted); }
+  .end-pad { padding-bottom: 96px; }
+
+  /* footer */
+  .foot { background: var(--c-ink); color: var(--c-cream); padding-block: 28px 40px; -webkit-text-stroke: 0.25px currentColor; }
+  .foot .mono { color: var(--c-cream); opacity: .9; font-size: 1.3rem; }
+  .foot a { text-decoration-color: var(--c-mustard); }
+  .foot a:hover { color: var(--c-pink); }
+  .foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 28px; }
+  .foot p { max-width: none; }
+
+  /* ---------- v7: readable text. Handwriting only for big titles. ---------- */
+  body { font-size: 1.2rem; line-height: 1.6; -webkit-text-stroke: 0; letter-spacing: 0; word-spacing: 0; }
+  p { max-width: 60ch; }
+  h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.25; letter-spacing: 0; word-spacing: 0; }
+  .mono { font-family: var(--font-body); font-style: italic; font-size: 1.05rem; letter-spacing: 0; color: var(--muted); line-height: 1.4; }
+  .mono b { font-weight: 600; font-style: normal; }
+  code { font-family: var(--font-body); font-weight: 600; }
+  .hand-note { font-size: 1.6rem; max-width: 30ch; }
+  .brand { font-size: 2.2rem; }
+  nav a { font-family: var(--font-body); font-weight: 500; font-size: 1.12rem; letter-spacing: .01em; }
+  .h-side .tag { font-family: var(--font-body); font-weight: 500; font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -0.01em; word-spacing: 0; }
+  .h-side p.intro { font-size: 1.25rem; }
+  .p-sub { font-size: 1.3rem; max-width: 46ch; }
+  .hand-line { font-family: var(--font-body); font-style: italic; font-size: 1.4rem; line-height: 1.5; }
+  .about .text { font-size: 1.28rem; line-height: 1.65; }
+  .glance dt { font-family: var(--font-body); font-style: italic; font-size: 1.02rem; }
+  .glance dd { font-size: 1.18rem; line-height: 1.35; }
+  .index .d { font-size: 1.12rem; line-height: 1.45; }
+  .feature .f-cap { font-family: var(--font-body); font-style: italic; font-size: 1rem; -webkit-text-stroke: 0; }
+  .feature .f-txt p { font-size: 1.2rem; }
+  .target i { font-family: var(--font-body); font-weight: 600; font-size: 1rem; }
+  .plate figcaption { font-family: var(--font-body); font-style: italic; font-size: 1rem; letter-spacing: 0; line-height: 1.35; }
+  .intro-txt { font-size: 1.28rem; line-height: 1.6; max-width: 60ch; }
+  .chips a { font-family: var(--font-body); font-weight: 500; font-size: 1.15rem; }
+  .next a { font-family: var(--font-body); font-weight: 600; font-size: 1.2rem; }
+  .foot { -webkit-text-stroke: 0; }
+  .foot .mono { font-size: 1.02rem; color: var(--c-cream); }
+  .note, .note-line { font-size: 1.02rem; }
+  th, td { font-size: 1.12rem; } th { font-family: var(--font-body); font-weight: 600; font-size: 1rem; }
+  /* ---------- v7: readable text + prototype showcase ---------- */
+  .s-label, .s-edge, .s-d, .c-t, .c-v, .c-g { font-family: var(--font-body); }
+  .s-label { font-size: 13px; } .s-edge { font-size: 13px; font-style: italic; } .s-d { font-size: 17px; font-style: italic; }
+  .c-t { font-size: 12.5px; } .c-v { font-size: 13px; } .c-g { font-size: 15px; font-weight: 600; }
+  .pp h2 em { color: var(--accent); }
+  .pp-hero { position: relative; background: var(--c-navy); color: var(--c-cream); padding-block: 56px 84px; }
+  .pp-hero .wrap { position: relative; z-index: 2; display: grid; gap: 22px; }
+  .pp-eyebrow { font-style: italic; font-size: 1.1rem; color: #E6D9A8; }
+  .pp-title { font-size: clamp(3.2rem, 7.4vw, 6.6rem); line-height: .9; max-width: 17ch; padding-bottom: .12em; color: var(--c-cream); -webkit-text-stroke: 0; }
+  .pp-title em { color: var(--c-mustard); font-style: normal; }
+  .pp-lead { font-size: 1.45rem; line-height: 1.45; max-width: 36ch; color: var(--c-cream); }
+  .pp-facts { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 14px; }
+  .pp-facts li { display: grid; gap: 2px; padding: 12px 18px 12px; border: 2px dashed rgba(251, 245, 211, .5); border-radius: var(--blob); min-width: 8.5rem; }
+  .pp-facts b { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.1; }
+  .pp-facts span { font-style: italic; font-size: .98rem; color: #E6D9A8; }
+  .pp-video { position: relative; margin: 26px auto 0; max-width: 62rem; width: 100%; display: grid; gap: 14px; }
+  .pp-video .tape { top: -13px; left: 18%; margin-left: 0; --tape: rgba(251, 245, 211, .85); }
+  .pp-video .shot { border-width: 10px; box-shadow: 0 18px 34px -12px rgba(0,0,0,.55); }
+  .pp-video figcaption { font-style: italic; font-size: 1rem; color: #E6D9A8; max-width: 70ch; padding-top: 6px; line-height: 1.45; }
+  .pp-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 22px; z-index: 1; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='22'%3E%3Cpath d='M0 22 V11 C18 4 36 16 58 10 S98 5 120 11 S170 16 192 8 S210 6 220 11 V22 Z' fill='%23FBF5D3'/%3E%3C/svg%3E") repeat-x bottom / 220px 22px; }
+  .pp-h { font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1; margin-bottom: 26px; }
+  .pp-idea { padding-block: 70px 70px; }
+  .pp-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 28px; margin-bottom: 44px; }
+  .pp-step { position: relative; background: #FFFEF6; border: 2px solid var(--fg); border-radius: var(--blob); padding: 30px 26px 26px; display: grid; gap: 6px; align-content: start; box-shadow: 0 12px 22px -14px rgba(55,47,45,.45); }
+  .pp-step:nth-child(2) { transform: rotate(.7deg); margin-top: 18px; } .pp-step:nth-child(1) { transform: rotate(-.6deg); } .pp-step:nth-child(3) { transform: rotate(-.3deg); margin-top: 8px; }
+  .pp-step .tape { top: -12px; left: 50%; margin-left: -2.7rem; --tape: color-mix(in srgb, var(--pc) 70%, var(--c-cream)); }
+  .pp-step .n { font-family: var(--font-body); font-weight: 600; font-size: 2.6rem; line-height: 1; color: var(--accent); }
+  .pp-step h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.2; -webkit-text-stroke: 0; }
+  .pp-step p { font-size: 1.12rem; line-height: 1.55; }
+  .pp-prose p { font-size: 1.3rem; line-height: 1.6; max-width: 56ch; }
+  .pp-geo { padding-block: 40px 90px; }
+  .pp-geo-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px 64px; align-items: start; }
+  .pp-diagram { margin: 0; display: grid; gap: 12px; background: #FFFEF6; padding: 18px 18px 14px; border: 2px solid var(--fg); border-radius: var(--blob2); }
+  .pp-diagram svg { display: block; width: 100%; height: auto; }
+  .pp-diagram figcaption, .pp-chart figcaption { font-style: italic; font-size: 1rem; line-height: 1.45; color: var(--muted); max-width: 52ch; }
+  .pp-diagram figcaption b, .pp-chart figcaption b { font-style: normal; font-weight: 600; color: var(--pen); margin-right: 8px; }
+  .trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace 9s ease-in-out infinite; }
+  .dmark { opacity: 0; animation: dm 9s ease-in-out infinite; }
+  @keyframes trace { 0% { stroke-dashoffset: 1; opacity: 1; } 58% { stroke-dashoffset: 0; opacity: 1; } 90% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+  @keyframes dm { 0%, 58% { opacity: 0; } 68%, 90% { opacity: 1; } 100% { opacity: 0; } }
+  .pp-list { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 0; }
+  .pp-list li { counter-increment: s; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1.5px dashed var(--rule); font-size: 1.15rem; line-height: 1.55; }
+  .pp-list li:first-child { border-top: 0; padding-top: 0; }
+  .pp-list li::before { content: counter(s); font-family: var(--font-body); font-weight: 600; font-size: 1.7rem; color: var(--accent); line-height: 1.1; }
+  .pp-tech { background: var(--c-olive); color: var(--c-cream); padding-block: 70px 80px; position: relative; }
+  .pp-tech .pp-h em { color: var(--c-mustard); }
+  .pp-spec { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+  .pp-spec > div { display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: 4px 18px; padding: 14px 0; border-top: 1.5px dashed rgba(251, 245, 211, .4); }
+  .pp-spec dt { font-style: italic; color: #F0E6B8; font-size: 1.02rem; padding-top: 2px; }
+  .pp-spec dd { margin: 0; font-size: 1.15rem; line-height: 1.5; }
+  .pp-spec code, .pp-tech code { color: var(--c-cream); font-family: var(--font-body); font-weight: 600; }
+  .pp-test { padding-block: 80px 70px; }
+  .pp-lead2 { font-size: 1.3rem; max-width: 56ch; margin-bottom: 30px; }
+  .pp-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-bottom: 56px; }
+  .stat { display: grid; gap: 8px; align-content: start; padding: 22px 24px 20px; background: #FFFEF6; border: 2px solid var(--fg); border-radius: var(--blob); box-shadow: 0 12px 22px -14px rgba(55,47,45,.45); }
+  .stat:nth-child(2) { transform: rotate(.6deg); } .stat:nth-child(1) { transform: rotate(-.5deg); }
+  .stat b { font-family: var(--font-body); font-weight: 600; font-size: clamp(2.4rem, 4.4vw, 3.4rem); line-height: 1; color: var(--accent); }
+  .stat b small { font-size: .45em; font-weight: 500; color: var(--muted); }
+  .stat span { font-size: 1.08rem; line-height: 1.45; }
+  .pp-two { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 36px 56px; align-items: start; margin-bottom: 46px; }
+  .pp-chart { margin: 0; display: grid; gap: 12px; }
+  .pp-chart svg { display: block; width: 100%; height: auto; }
+  .pp-obs { display: grid; gap: 0; }
+  .pp-obs article { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 12px; padding: 18px 0; border-top: 1.5px dashed var(--rule); }
+  .pp-obs article:first-child { border-top: 0; padding-top: 0; }
+  .pp-obs .n { font-family: var(--font-body); font-weight: 600; font-size: 1.2rem; color: var(--accent); padding-top: 4px; }
+  .pp-obs h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.22rem; line-height: 1.3; margin-bottom: 4px; -webkit-text-stroke: 0; }
+  .pp-obs p { font-size: 1.08rem; line-height: 1.55; }
+  .pp-test .note { margin-top: 10px; }
+  .pp-next { padding-block: 40px 20px; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
+  .pp-ideas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 40px; margin-bottom: 16px; }
+  .pp-ideas p { font-size: 1.15rem; line-height: 1.55; }
+  .pp-ideas b { font-weight: 600; color: var(--accent); }
+  .pp .next { margin-top: 26px; }
+  @media (max-width: 900px) {
+    .pp-steps, .pp-stats, .pp-ideas { grid-template-columns: minmax(0, 1fr); }
+    .pp-step:nth-child(n), .stat:nth-child(n) { transform: none; margin-top: 0; }
+    .pp-geo-in, .pp-two { grid-template-columns: minmax(0, 1fr); }
+    .pp-spec { grid-template-columns: minmax(0, 1fr); }
+
+  }
+  @media (max-width: 640px) {
+    .pp-spec > div { grid-template-columns: minmax(0, 1fr); }
+    .pp-video .shot { border-width: 6px; }
+    .pp-lead { font-size: 1.3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trace { animation: none; stroke-dashoffset: 0; } .dmark { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 900px) {
+    .feature .f-txt, .feature .f-vid { grid-column: 1 / -1; }
+    .h-side { grid-column: 1 / -1; order: 2; padding-top: 28px; grid-template-columns: minmax(0, 1fr) minmax(0, 12rem); align-items: start; gap: 24px; }
+    .h-art { grid-column: 1 / -1; order: 1; margin-top: 1.6rem; max-width: 30rem; margin-inline: auto; width: 100%; }
+    .about .text, .about .glance, .about .side-art { grid-column: 1 / -1; grid-row: auto; }
+    .about .side-art { max-width: 20rem; }
+    .about .glance { order: 3; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+    .proj .meta, .proj .txt, .proj .imgs { grid-column: 1 / -1; }
+    .row { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-block: 36px; }
+    .row .label { padding-top: 0; }
+    .blk .row { padding: 32px 22px; }
+    .index a { grid-template-columns: minmax(0, 1fr) 1.6rem; }
+    .index .d { grid-column: 1 / -1; grid-row: 2; }
+    .index .go { grid-column: 2; grid-row: 1; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 1.12rem; }
+    .wall { gap: 48px 16px; }
+    .plate { grid-column: 1 / -1; margin-top: 0; }
+    .plate:nth-child(even) { width: 84%; margin-left: auto; }
+    .h-side { grid-template-columns: minmax(0, 1fr); }
+    .h-meta { flex-direction: column; gap: 2px; }
+    .spec > div { grid-template-columns: minmax(0, 1fr); }
+    .band { padding-block: 48px 64px; }
+    .feature .f-vid { padding: 16px; }
+    .proj .imgs { padding: 16px; }
+    .h-art { padding: 0 20px 24px 0; }
+    .h-art .pad::before { inset: 16px -18px -18px 16px; }
+    .h-art .sq1 { left: -0.4rem; width: 2.6rem; height: 2.6rem; }
+    .d-star { top: 0; }
+    .target { inset: -8px; }
+    .target i { font-size: 1.1rem; padding: 1px 6px 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .target rect { animation: none; stroke-dashoffset: 0; }
+    .target i { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="index.html">Farnoosh Adshirinpour</a>
+    <nav aria-label="Pages">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="prototype.html">Unity Project</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="p-head">
+      <i class="mark" style="--pc:var(--c-navy)"></i>
+      <div class="top"><span class="mono">Projects</span><span class="mono">Six series</span></div>
+      <h1 class="p-title">Bodies of <em>work</em></h1>
+      <p class="p-sub">Each series starts from a question about how we see: nature and the self, the character of objects, familiar landscapes, light and fear, the individuality of the body, and the lit face.</p>
+    </div>
+    <div class="chips" aria-label="Jump to a series"><a href="#digital">Digital portraits</a><a href="#biophilia">Biophilia</a><a href="#rocks">Rocks</a><a href="#mountains">Mountains</a><a href="#charcoal">Light and Darkness</a><a href="#femme">Femme</a></div>
+  </div>
+
+  <section class="band" id="digital" style="--band:#DEBFB7; --band-ink:#372F2D; --band-muted:#514A3A;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-burg)"></i>Digital <em>portraits</em></h2><span class="mono">Six portraits and two animated paintings</span></div>
+      <p class="intro-txt">A set of digital portrait paintings, each built around a different light and colour setup: warm against cool, soft daylight, and a limited palette. Two of the paintings are also shown as short animations.</p>
+      <div class="wall">
+<figure class="plate" style="--c:1 / span 4; --mt:0px; --tape:rgba(155, 143, 114, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-1.jpg"><img src="portrait-1.jpg" alt="Digital portrait of a woman with dark hair, lit warm orange on one side and cool green on the other." width="1640" height="2360" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:5rem; --tape:rgba(183, 168, 147, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-2.jpg"><img src="portrait-2.jpg" alt="Digital portrait of a woman with long dark hair against a soft lavender background, glancing to one side." width="1640" height="2360" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:2rem; --tape:rgba(141, 151, 136, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-3.jpg"><img src="portrait-3.jpg" alt="Digital portrait of a man in teal and ochre, built from visible directional strokes." width="2000" height="3000" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 4; --mt:2rem; --tape:rgba(161, 148, 131, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-4.jpg"><img src="portrait-4.jpg" alt="Digital portrait of a woman with voluminous dark curly hair against a grey-violet background." width="2000" height="3000" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:0px; --tape:rgba(201, 177, 163, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-5.jpg"><img src="portrait-5.jpg" alt="Digital portrait of a woman with long auburn hair against a blue-grey background." width="2000" height="3000" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:5rem; --tape:rgba(195, 185, 154, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="portrait-6.jpg"><img src="portrait-6.jpg" alt="Digital portrait of a young woman with two braids and a wide-brimmed tan hat against a teal-green background." width="2000" height="3000" loading="lazy"></a><figcaption><span>Digital painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:2 / span 4; --mt:1rem; --tape:rgba(200, 182, 157, .78)"><i class="tape" aria-hidden="true"></i><div class="art"><video autoplay muted loop playsinline preload="metadata" poster="art-process-1-poster.jpg" width="720" height="1036" aria-label="Short animation of a digital portrait of a bearded man who slowly blinks."><source src="art-process-1.mp4" type="video/mp4"></video></div><figcaption><span>Animated painting</span><span></span></figcaption></figure>
+<figure class="plate" style="--c:7 / span 4; --mt:4rem; --tape:rgba(150, 138, 117, .78)"><i class="tape" aria-hidden="true"></i><div class="art"><video autoplay muted loop playsinline preload="metadata" poster="art-process-2-poster.jpg" width="720" height="1080" aria-label="Short animation of a digital portrait of a woman with long dark hair and roses."><source src="art-process-2.mp4" type="video/mp4"></video></div><figcaption><span>Animated painting</span><span></span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="biophilia" style="--band:#C2C760; --band-ink:#372F2D; --band-muted:#514A3A;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-green)"></i>Bio<em>philia</em></h2><span class="mono">2022 &middot; oil on canvas</span></div>
+      <p class="intro-txt">A series of oil paintings exploring the human relationship with nature through the philosophy of biophilia. Human and natural forms are integrated into a single narrative, and the series examines the dissolution of the boundary between people and the natural world.</p>
+      <div class="wall">
+<figure class="plate" style="--c:2 / span 10; --mt:0px; --tape:rgba(151, 179, 126, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="biophilia.jpg"><img src="biophilia.jpg" alt="Two oil canvases side by side showing a room overgrown with green plants, with a seated figure on a floor that looks like water." width="2576" height="1619" loading="lazy"></a><figcaption><span>Biophilia</span><span>2022, two panels, 60 &times; 80 cm each</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="rocks" style="--band:#D3B37C; --band-ink:#372F2D; --band-muted:#372F2D;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-terra)"></i><em>Rocks</em></h2><span class="mono">2021 &middot; oil on canvas</span></div>
+      <p class="intro-txt">A visual study inspired by the principles of Xieyi painting, investigating how close observation and visual interpretation can convey character beyond physical form.</p>
+      <div class="wall">
+<figure class="plate" style="--c:1 / span 4; --mt:0px; --tape:rgba(210, 202, 183, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-1.jpg"><img src="rocks-1.jpg" alt="Oil painting of a heap of brown and amber rocks on a pale ground, with faint drips beneath them." width="1938" height="2576" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:5rem; --tape:rgba(219, 210, 189, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-2.jpg"><img src="rocks-2.jpg" alt="Oil painting of soft orange and teal rocks fading into a pale background." width="1857" height="2576" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:2rem; --tape:rgba(213, 205, 188, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-3.jpg"><img src="rocks-3.jpg" alt="Oil painting of rounded rocks in terracotta and olive green on a pale ground, with a small stone in front." width="1849" height="2576" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 4; --mt:2rem; --tape:rgba(206, 199, 180, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-4.jpg"><img src="rocks-4.jpg" alt="Oil painting of three upright rocks in pink, ochre and grey against a speckled ground." width="1848" height="2576" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:0px; --tape:rgba(189, 206, 188, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-5.jpg"><img src="rocks-5.jpg" alt="Oil painting of stacked rounded rocks in translucent teal and green, with drips and reflections." width="2688" height="3616" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:5rem; --tape:rgba(206, 211, 193, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="rocks-6.jpg"><img src="rocks-6.jpg" alt="Oil painting of blue-green rocks on a pale grey ground." width="2768" height="3712" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2021</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="mountains" style="--band:#9FBDBF; --band-ink:#372F2D; --band-muted:#514A3A;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-teal)"></i><em>Mountains</em></h2><span class="mono">2020 &middot; oil on canvas</span></div>
+      <p class="intro-txt">A series that challenges conventional perceptions of mountains through expressive colour and composition, reinterpreting familiar landscapes as vibrant, dynamic environments.</p>
+      <div class="wall">
+<figure class="plate" style="--c:1 / span 7; --mt:0px; --tape:rgba(175, 181, 164, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="mountains-1.jpg"><img src="mountains-1.jpg" alt="Oil painting of golden mountain ridges with blue shadows under a blue sky." width="2576" height="1808" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:8 / span 5; --mt:5rem; --tape:rgba(199, 194, 160, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="mountains-2.jpg"><img src="mountains-2.jpg" alt="Oil painting of a mountain slope in green, pink and ochre under a turquoise sky." width="2576" height="1841" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 5; --mt:2rem; --tape:rgba(191, 192, 167, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="mountains-3.jpg"><img src="mountains-3.jpg" alt="Oil painting of layered mountain ranges in gold and blue." width="3777" height="2708" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:6 / span 7; --mt:0px; --tape:rgba(195, 197, 168, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="mountains-4.jpg"><img src="mountains-4.jpg" alt="Oil painting of a mountain slope in brown, green and blue under a turquoise sky." width="3658" height="2624" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:3 / span 8; --mt:0px; --tape:rgba(184, 186, 184, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="mountains-5.jpg"><img src="mountains-5.jpg" alt="Oil painting of a sunlit ridge above a snow-covered blue valley." width="3775" height="2669" loading="lazy"></a><figcaption><span>Oil on canvas</span><span>2020</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="charcoal" style="--band:#B4A3A6; --band-ink:#372F2D; --band-muted:#372F2D; --sec-accent:#652A2E;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-ink)"></i>The Battle Between <em>Light</em> and Darkness</h2><span class="mono">2020 &middot; charcoal on paper</span></div>
+      <p class="intro-txt">A series of charcoal drawings of interiors in which light enters through windows and doorways. Darkness stands for fear and difficulty, and light for hope.</p>
+      <p class="hand-note" style="--r:-1.5deg;margin-top:14px">light = hope, darkness = fear</p>
+      <div class="wall">
+<figure class="plate" style="--c:1 / span 4; --mt:0px; --tape:rgba(170, 167, 151, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-1.jpg"><img src="charcoal-1.jpg" alt="Charcoal drawing of an empty chair in a pool of light beside a tall window." width="1829" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:4rem; --tape:rgba(164, 159, 143, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-2.jpg"><img src="charcoal-2.jpg" alt="Charcoal drawing looking through a dark doorway into a brighter room with a chair and a window." width="1856" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:1.5rem; --tape:rgba(163, 160, 145, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-9.jpg"><img src="charcoal-9.jpg" alt="Charcoal drawing of a window above a railing, with light falling across the floorboards." width="1778" height="2481" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 8; --mt:0px; --tape:rgba(167, 163, 147, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-4.jpg"><img src="charcoal-4.jpg" alt="Charcoal drawing of a sunbeam from a window falling across a floor, with a wooden chair in the shadow." width="2576" height="1848" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:4rem; --tape:rgba(174, 168, 153, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-5.jpg"><img src="charcoal-5.jpg" alt="Charcoal drawing of a dark room with an open window and a pale curtain lifted by the wind." width="1860" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 4; --mt:0px; --tape:rgba(178, 173, 157, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-6.jpg"><img src="charcoal-6.jpg" alt="Charcoal drawing of a room with a tall paned window, a radiator and a ladder-back chair." width="1846" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:3rem; --tape:rgba(161, 158, 143, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-10.jpg"><img src="charcoal-10.jpg" alt="Charcoal drawing of a window with leaves outside, a sunbeam on the floor, a small framed picture and a chair." width="1318" height="1802" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:0px; --tape:rgba(169, 165, 149, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-3.jpg"><img src="charcoal-3.jpg" alt="Charcoal drawing of a window with sheer curtains, a vase of leaves and two steaming cups on a table." width="1856" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:1 / span 8; --mt:0px; --tape:rgba(156, 151, 136, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-7.jpg"><img src="charcoal-7.jpg" alt="Charcoal drawing of a rocking chair in a dark room, lit by a single shaft of light from above." width="2576" height="1847" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:9 / span 4; --mt:4rem; --tape:rgba(166, 163, 148, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-11.jpg"><img src="charcoal-11.jpg" alt="Charcoal drawing of a window with blinds and plants on the sill." width="1270" height="1656" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+<figure class="plate" style="--c:5 / span 4; --mt:2rem; --tape:rgba(162, 159, 144, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="charcoal-8.jpg"><img src="charcoal-8.jpg" alt="Charcoal drawing of a dark room with a tall lit window and a small rocking horse on the floor." width="1873" height="2576" loading="lazy"></a><figcaption><span>Charcoal on paper</span><span>2020</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="femme" style="--band:#DCA5AA; --band-ink:#372F2D; --band-muted:#372F2D; --sec-accent:#652A2E;">
+    <div class="wrap">
+      <div class="sec-head"><h2><i class="sq" style="--pc:var(--c-burg)"></i><em>Femme</em></h2><span class="mono">2019 &middot; rapid ink on paper</span></div>
+      <p class="intro-txt">A figurative project examining body diversity, aging, and female identity through observational drawing, emphasizing the individuality of the female body beyond idealized representation.</p>
+      <p class="mono note-line">Contains nude figure studies</p>
+      <div class="wall">
+<figure class="plate" style="--c:1 / span 3; --mt:0px; --tape:rgba(204, 200, 182, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="art-femme-1.jpg"><img src="art-femme-1.jpg" alt="Rapid ink drawing of a standing elderly woman in a room, drawn with dense hatching." width="1000" height="1400" loading="lazy"></a><figcaption><span>Rapid ink</span><span>2019</span></figcaption></figure>
+<figure class="plate" style="--c:4 / span 3; --mt:4rem; --tape:rgba(208, 205, 189, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="art-femme-2.jpg"><img src="art-femme-2.jpg" alt="Rapid ink drawing of a standing elderly woman wearing glasses in front of a doorway." width="1000" height="1400" loading="lazy"></a><figcaption><span>Rapid ink</span><span>2019</span></figcaption></figure>
+<figure class="plate" style="--c:7 / span 3; --mt:1rem; --tape:rgba(197, 189, 163, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="art-femme-3.jpg"><img src="art-femme-3.jpg" alt="Rapid ink drawing, seen from behind, of a full-figured woman leaning forward in a corner." width="970" height="1358" loading="lazy"></a><figcaption><span>Rapid ink</span><span>2019</span></figcaption></figure>
+<figure class="plate" style="--c:10 / span 3; --mt:5rem; --tape:rgba(189, 183, 164, .78)"><i class="tape" aria-hidden="true"></i><a class="art" href="art-femme-4.jpg"><img src="art-femme-4.jpg" alt="Rapid ink drawing of a seated figure on a stool, built from curving hatched lines." width="1005" height="1400" loading="lazy"></a><figcaption><span>Rapid ink</span><span>2019</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next">
+      <a class="mono" href="prototype.html">Unity project &rarr;</a>
+      <a class="mono" href="about.html">About &rarr;</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="mono">&copy; 2026 Farnoosh Adshirinpour</p>
+    <p class="mono">Instagram &mdash; <a href="https://www.instagram.com/farnooshmakes/" rel="noopener">@farnooshmakes</a> / <a href="https://www.instagram.com/farnoosh.adshirinpour/" rel="noopener">@farnoosh.adshirinpour</a></p>
+  </div>
+</footer>
+
+<script>
+/* If the browser blocks autoplay, show play controls instead of a frozen picture. */
+document.querySelectorAll('video[autoplay]').forEach(function (v) {
+  var p = v.play && v.play();
+  if (p && p.catch) { p.catch(function () { v.controls = true; }); }
+});
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video.hero-vid').forEach(function (v) { v.pause(); v.removeAttribute('autoplay'); });
+}
+</script>
+</body>
+</html>
