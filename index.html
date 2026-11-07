@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Farnoosh Adshirinpour | Portfolio</title>
-<meta name="description" content="Portfolio of Farnoosh Adshirinpour: visual artist working across painting, drawing and digital media, with prototype research on spatial drawing.">
+<meta name="description" content="Portfolio of Farnoosh Adshirinpour: visual artist working across painting, drawing and digital media, with a Unity prototype for spatial drawing.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap">
 <style>
   @font-face { font-family: 'Farnoosh Hand'; src: url('farnoosh-hand.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
   html { color-scheme: light; }
+  html { scroll-padding-top: 96px; }
   body { margin: 0; }
   img, video { max-width: 100%; }
   *, *::before, *::after { box-sizing: border-box; }
@@ -38,8 +39,8 @@
 
   body {
     background: var(--bg) var(--paper); color: var(--fg);
-    font-family: var(--font-body); font-size: 1.5rem; line-height: 1.28;
-    -webkit-font-smoothing: antialiased; -webkit-text-stroke: 0.35px currentColor; letter-spacing: -0.035em;
+    font-family: var(--font-body); font-size: 1.5rem; line-height: 1.4;
+    -webkit-font-smoothing: antialiased; -webkit-text-stroke: 0.3px currentColor; letter-spacing: -0.015em; word-spacing: 0.22em;
     font-synthesis: none;
   }
   .wrap {
@@ -49,7 +50,7 @@
   }
   .wrap > *, .row > * { min-width: 0; }
 
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1; margin: 0; letter-spacing: -0.04em; text-wrap: balance; -webkit-text-stroke: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1; margin: 0; letter-spacing: -0.02em; word-spacing: 0.12em; text-wrap: balance; -webkit-text-stroke: 0; }
   h1 em, h2 em, h3 em { font-style: normal; color: var(--accent); }
   h2 { font-size: clamp(2.8rem, 5.4vw, 4rem); }
   h3 { font-size: 2.1rem; line-height: 1.05; }
@@ -67,10 +68,10 @@
   .bar { position: sticky; top: 0; z-index: 20; background: var(--bg) var(--paper); padding-bottom: 9px; }
   .bar::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 9px; background: var(--wob) repeat-x 0 0 / 220px 9px; }
   .bar-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding-block: 10px 6px; }
-  .brand { font-family: var(--font-display); font-size: 2.3rem; line-height: 1; text-decoration: none; letter-spacing: -0.04em; -webkit-text-stroke: 0; }
+  .brand { font-family: var(--font-display); font-size: 2.3rem; line-height: 1; text-decoration: none; letter-spacing: -0.02em; word-spacing: 0.1em; -webkit-text-stroke: 0; }
   .brand:hover { color: var(--accent); }
   nav { display: flex; flex-wrap: wrap; gap: 2px 26px; }
-  nav a { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: -0.02em; text-decoration: none; padding: 2px 4px; background: none; }
+  nav a { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: -0.01em; text-decoration: none; padding: 2px 4px; background: none; }
   nav a:hover { color: var(--accent); }
   nav a[aria-current="page"] { background: var(--squig) repeat-x 0 100% / 40px 9px; padding-bottom: 8px; }
 
@@ -87,36 +88,45 @@
   .d-star { right: 6%; top: 4%; width: clamp(3rem, 8vw, 6rem); stroke: var(--c-terra); stroke-width: 3; }
   .d-spark { left: 64%; top: 34%; width: clamp(1.6rem, 3.6vw, 2.8rem); stroke: var(--pen); stroke-width: 3; }
   .h-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; align-items: start; }
-  .h-side { grid-column: 1 / span 4; display: grid; gap: 36px; padding-top: 52px; }
-  .h-side .tag { letter-spacing: -0.04em; font-family: var(--font-display); font-size: 2.9rem; line-height: 0.98; -webkit-text-stroke: 0; }
+  .h-side { grid-column: 1 / span 5; display: grid; gap: 36px; padding-top: 52px; }
+  .h-side .tag { letter-spacing: -0.02em; word-spacing: 0.12em; font-family: var(--font-display); font-size: 2.9rem; line-height: 0.98; -webkit-text-stroke: 0; }
   .h-side p.intro { font-size: 1.5rem; }
   .h-fig { display: grid; gap: 10px; margin: 0; position: relative; }
   .h-fig a.thumb { display: block; background: #FFFEF6; padding: 8px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 10px 22px -8px rgba(55,47,45,.35); transform: rotate(-1deg); }
   .h-fig img { display: block; width: 100%; height: auto; }
   .h-fig .hand-note { margin-top: 6px; }
-  .h-art { grid-column: 6 / -1; position: relative; margin-top: 2.2rem; z-index: 1; padding: 0 30px 34px 0; }
+  .h-art { grid-column: 8 / -1; position: relative; margin-top: 0.6rem; z-index: 1; padding: 0 30px 34px 0; }
   .h-art .pad { position: relative; transform: rotate(0.6deg); }
   .h-art .pad::before { content: ""; position: absolute; inset: 22px -26px -26px 22px; background: var(--c-burg); z-index: 0; border-radius: var(--blob2); transform: rotate(1.6deg); }
   .h-art a.main { display: block; position: relative; z-index: 1; background: #FFFEF6; padding: 10px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 12px 24px -8px rgba(55,47,45,.4); }
-  .h-art img { display: block; width: 100%; height: auto; }
+  .h-art img, .h-art video { display: block; width: 100%; height: auto; background: #FFFFE0; }
   .h-art .tape { top: -14px; left: 12%; }
+  .h-art .hero-vid { cursor: pointer; }
   .h-art .sq { position: absolute; z-index: 2; border-radius: var(--blob); }
   .h-art .sq1 { width: 3.4rem; height: 3.4rem; background: var(--c-mustard); left: -1.7rem; bottom: 22%; transform: rotate(-6deg); }
   .h-art .sq2 { display: none; }
   .h-cap { display: flex; justify-content: space-between; gap: 16px; padding-top: 52px; }
-  .target { position: absolute; inset: 9% 7%; pointer-events: none; z-index: 3; }
+  .target { position: absolute; inset: -14px; pointer-events: none; z-index: 3; }
   .target svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-  .target rect { fill: none; stroke: var(--c-cream); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.8s cubic-bezier(.6,.05,.25,1) .5s forwards; }
+  .target rect { fill: none; stroke: var(--c-terra); stroke-width: 2.5; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.8s cubic-bezier(.6,.05,.25,1) .5s forwards; }
   .target i { position: absolute; font-family: var(--font-display); font-style: normal; font-size: 1.3rem; line-height: 1; color: var(--c-cream); background: var(--c-ink); padding: 2px 8px 3px; border-radius: var(--blob); opacity: 0; animation: fade .8s ease 2.6s forwards; white-space: nowrap; -webkit-text-stroke: 0; }
   .target .pa { left: 0; top: 0; transform: translate(-50%, -50%); } .target .pb { right: 0; top: 0; transform: translate(50%, -50%); }
   .target .pc { right: 0; bottom: 0; transform: translate(50%, 50%); } .target .pd { left: 0; bottom: 0; transform: translate(-50%, 50%); }
   @keyframes draw { to { stroke-dashoffset: 0; } }
   @keyframes fade { to { opacity: 1; } }
 
+  .feature { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: center; margin-top: 90px; }
+  .feature .f-txt { grid-column: 1 / span 4; display: grid; gap: 16px; }
+  .feature .f-txt h2 { font-size: clamp(2.8rem, 5vw, 4rem); }
+  .feature .f-vid { grid-column: 5 / -1; background: var(--c-navy); padding: 28px; border-radius: var(--blob2); transform: rotate(.5deg); position: relative; }
+  .feature .f-vid .tape { top: -13px; left: 20%; margin-left: 0; --tape: rgba(251, 245, 211, .85); }
+  .feature .shot { background: #000; border: 8px solid #FFFEF6; box-shadow: 0 10px 20px -8px rgba(0,0,0,.5); }
+  .feature .shot video { display: block; width: 100%; height: auto; }
+  .feature .f-cap { color: var(--c-cream); font-family: var(--font-display); font-size: 1.25rem; padding-top: 10px; -webkit-text-stroke: 0.2px currentColor; }
   .index { margin-top: 90px; padding-top: 18px; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
   .index a { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 2rem; gap: 8px 32px; align-items: center; padding: 20px 0 30px; background: var(--wob) repeat-x 0 100% / 220px 9px; text-decoration: none; transition: padding-left .3s ease, color .2s ease; }
   .index a:hover { padding-left: 14px; color: var(--accent); }
-  .index .t { letter-spacing: -0.04em; font-family: var(--font-display); font-size: clamp(3rem, 6.4vw, 4.8rem); line-height: 1; display: flex; align-items: center; gap: 20px; -webkit-text-stroke: 0; }
+  .index .t { letter-spacing: -0.02em; word-spacing: 0.1em; font-family: var(--font-display); font-size: clamp(3rem, 6.4vw, 4.8rem); line-height: 1; display: flex; align-items: center; gap: 20px; -webkit-text-stroke: 0; }
   .index .t i { flex: none; width: 1.5rem; height: 1.5rem; border: 2px solid var(--pc); border-radius: var(--blob); background: repeating-linear-gradient(135deg, var(--pc) 0 2.5px, transparent 2.5px 6px); transform: rotate(-4deg); }
   .index .d { font-size: 1.4rem; color: var(--muted); }
   .index .go { text-align: right; font-family: var(--font-display); font-size: 2rem; }
@@ -129,15 +139,13 @@
   .rule { border: 0; height: 9px; margin: 0; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
 
   /* ---------- about ---------- */
-  .badges { display: flex; flex-wrap: wrap; gap: 12px 10px; padding-top: 10px; }
-  .badge { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: -0.02em; padding: 6px 18px 8px; background: var(--b); color: var(--t); border-radius: var(--blob); transform: rotate(var(--r, -1deg)); line-height: 1.1; -webkit-text-stroke: 0.2px currentColor; }
-  .badge:nth-child(even) { --r: 1.2deg; }
+  .hand-line { font-family: var(--font-display); font-size: 1.9rem; line-height: 1.5; color: var(--pen); max-width: 52ch; padding-bottom: 10px; background: var(--squig) repeat-x 0 100% / 60px 12px; transform: rotate(-.6deg); }
   .about { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px 24px; padding-block: 36px 96px; align-items: start; }
   .about .text { grid-column: 4 / span 6; grid-row: 1; display: grid; gap: 22px; font-size: 1.65rem; line-height: 1.3; }
   .about .glance { grid-column: 1 / span 3; grid-row: 1; margin: 0; display: grid; gap: 18px; align-content: start; }
   .glance div { display: grid; gap: 0; padding-top: 16px; background: var(--wob) repeat-x 0 0 / 220px 9px; }
   .glance dt { font-family: var(--font-display); font-size: 1.15rem; color: var(--muted); }
-  .glance dd { margin: 0; font-size: 1.45rem; line-height: 1.1; color: var(--pen); }
+  .glance dd { margin: 0; font-size: 1.45rem; line-height: 1.1; color: var(--fg); }
   .about .side-art { grid-column: 11 / -1; grid-row: 1; margin: 0; display: grid; gap: 9px; position: relative; padding-top: 10px; }
   .about .side-art .art { display: block; position: relative; background: #FFFEF6; padding: 8px; box-shadow: 0 1px 1px rgba(55,47,45,.2), 0 10px 22px -8px rgba(55,47,45,.35); transform: rotate(1.6deg); }
   .about .side-art img { display: block; width: 100%; height: auto; }
@@ -159,11 +167,15 @@
   .plate img, .plate video { display: block; width: 100%; height: auto; transition: transform .6s ease; }
   .plate .art:hover img { transform: scale(1.02); }
   .plate figcaption { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01em; color: var(--pen); line-height: 1.1; }
-  .tape { position: absolute; top: -13px; left: 50%; width: 5.4rem; height: 1.7rem; margin-left: -2.7rem; background: rgba(205, 176, 101, .82); transform: rotate(-4deg); z-index: 3; clip-path: polygon(3% 0, 97% 0, 100% 20%, 96% 40%, 100% 60%, 96% 80%, 100% 100%, 3% 100%, 0 80%, 4% 60%, 0 40%, 4% 20%); }
-  .plate:nth-child(4n+2) .tape { background: rgba(220, 165, 170, .85); transform: rotate(3deg); }
-  .plate:nth-child(4n+3) .tape { background: rgba(105, 148, 151, .78); transform: rotate(-2deg); }
-  .plate:nth-child(4n) .tape { background: rgba(194, 199, 96, .8); transform: rotate(5deg); }
+  .tape { position: absolute; top: -13px; left: 50%; width: 5.4rem; height: 1.7rem; margin-left: -2.7rem; background: var(--tape, rgba(205, 176, 101, .6)); transform: rotate(-4deg); z-index: 3; clip-path: polygon(3% 0, 97% 0, 100% 20%, 96% 40%, 100% 60%, 96% 80%, 100% 100%, 3% 100%, 0 80%, 4% 60%, 0 40%, 4% 20%); }
+  .plate:nth-child(even) .tape { transform: rotate(3deg); }
+  .plate:nth-child(3n) .tape { transform: rotate(-2deg); }
   .note-line { margin-top: 14px; }
+  .intro-txt { margin-top: 22px; max-width: 56ch; font-size: 1.55rem; line-height: 1.3; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px 30px; padding-block: 8px 0; }
+  .chips a { font-family: var(--font-display); font-size: 1.7rem; text-decoration: none; padding-bottom: 6px; background: var(--squig) repeat-x 0 100% / 40px 9px; }
+  .chips a:hover { color: var(--accent); }
+  .band .next { margin-bottom: 0; }
 
   /* ---------- projects ---------- */
   .proj { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px 24px; padding-block: 60px 56px; background: var(--wob2) repeat-x 0 0 / 260px 9px; align-items: start; }
@@ -251,8 +263,9 @@
   .foot p { max-width: none; }
 
   @media (max-width: 900px) {
+    .feature .f-txt, .feature .f-vid { grid-column: 1 / -1; }
     .h-side { grid-column: 1 / -1; order: 2; padding-top: 28px; grid-template-columns: minmax(0, 1fr) minmax(0, 12rem); align-items: start; gap: 24px; }
-    .h-art { grid-column: 1 / -1; order: 1; margin-top: 1.6rem; }
+    .h-art { grid-column: 1 / -1; order: 1; margin-top: 1.6rem; max-width: 30rem; margin-inline: auto; width: 100%; }
     .about .text, .about .glance, .about .side-art { grid-column: 1 / -1; grid-row: auto; }
     .about .side-art { max-width: 20rem; }
     .about .glance { order: 3; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
@@ -273,11 +286,14 @@
     .h-meta { flex-direction: column; gap: 2px; }
     .spec > div { grid-template-columns: minmax(0, 1fr); }
     .band { padding-block: 48px 64px; }
+    .feature .f-vid { padding: 16px; }
     .proj .imgs { padding: 16px; }
     .h-art { padding: 0 20px 24px 0; }
     .h-art .pad::before { inset: 16px -18px -18px 16px; }
     .h-art .sq1 { left: -0.4rem; width: 2.6rem; height: 2.6rem; }
     .d-star { top: 0; }
+    .target { inset: -8px; }
+    .target i { font-size: 1.1rem; padding: 1px 6px 2px; }
   }
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
@@ -294,9 +310,9 @@
     <nav aria-label="Pages">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
+        <a href="prototype.html">Unity Project</a>
         <a href="artworks.html">Artworks</a>
         <a href="projects.html">Projects</a>
-        <a href="prototype.html">Prototype Research</a>
     </nav>
   </div>
 </header>
@@ -316,31 +332,45 @@
           <p class="tag">Painting, digital art, and the tools behind them.</p>
           <p class="intro">Visual artist working across traditional painting, digital art, and visual development, with a growing interest in interactive design and human-computer interaction.</p>
         </div>
-        <figure class="h-fig">
-          <a class="thumb" href="prototype.html"><img src="demo-poster.jpg" alt="Screenshot of the Interactive Spatial Drawing Assistant running in Unity." width="1600" height="940" loading="lazy"></a>
-          <figcaption class="mono"><b>Fig. 1</b> &mdash; Spatial Drawing Assistant</figcaption>
-          <p class="hand-note" style="--r:-3deg">drawing in 3D space, see my research</p>
-        </figure>
       </div>
 
       <div class="h-art">
         <div class="pad">
-          <i class="sq sq1" aria-hidden="true"></i><i class="sq sq2" aria-hidden="true"></i>
-          <a class="main" href="artworks.html#oil"><img src="art-mountains-1.jpg" alt="Oil painting of golden mountain ridges with blue shadows under a bright blue sky." width="1145" height="804" fetchpriority="high"></a>
+          <i class="sq sq1" aria-hidden="true"></i>
+          <a class="main" href="projects.html#digital"><video class="hero-vid" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" width="880" height="1266" aria-label="Animated digital portrait of a bearded man who slowly blinks.">
+            <source src="hero.mp4" type="video/mp4"></video></a>
           <div class="target" aria-hidden="true">
             <svg><rect width="100%" height="100%" pathLength="1"/></svg>
             <i class="pa">A</i><i class="pb">B</i><i class="pc">C</i><i class="pd">D</i>
           </div>
         </div>
-        <div class="h-cap"><span class="mono"><b>Mountains</b> &mdash; 2020</span><span class="mono">Oil on canvas</span></div>
+        <div class="h-cap"><span class="mono"><b>Animated portrait</b></span><span class="mono">Digital painting</span></div>
       </div>
     </div>
 
+    <section class="feature" aria-labelledby="feat-title">
+      <div class="f-txt">
+        <span class="mono">unity project</span>
+        <h2 id="feat-title">Interactive <em>Spatial</em> Drawing Assistant</h2>
+        <p>A prototype that measures how accurately a person draws in a 3D scene and gives feedback while they draw.</p>
+        <a class="mono" href="prototype.html" style="font-size:1.5rem">See the research &rarr;</a>
+      </div>
+      <div class="f-vid">
+        <i class="tape" aria-hidden="true"></i>
+        <div class="shot">
+          <video autoplay muted loop playsinline preload="metadata" poster="demo-poster.jpg" width="1600" height="940" aria-label="Screen recording of the Unity prototype: a rectangle being drawn with the mouse in a 3D scene.">
+            <source src="demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="f-cap">Screen recording of the prototype in Unity 6</p>
+      </div>
+    </section>
+
     <div class="index">
-      <a href="about.html"><span class="t"><i style="--pc:var(--c-green)"></i>About</span><span class="d">Background, practice, and the questions that connect painting to interactive media.</span><span class="go" aria-hidden="true">&rarr;</span></a>
-      <a href="artworks.html"><span class="t"><i style="--pc:var(--c-terra)"></i>Artworks</span><span class="d">Digital painting, oil, charcoal, and ink.</span><span class="go" aria-hidden="true">&rarr;</span></a>
-      <a href="projects.html"><span class="t"><i style="--pc:var(--c-navy)"></i>Projects</span><span class="d">Six bodies of work on nature, perception, light, and the figure.</span><span class="go" aria-hidden="true">&rarr;</span></a>
-      <a href="prototype.html"><span class="t"><i style="--pc:var(--c-mustard)"></i>Prototype Research</span><span class="d">Interactive Spatial Drawing Assistant: a prototype that measures and supports spatial drawing.</span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a href="about.html"><span class="t"><i style="--pc:var(--c-green)"></i>About</span><span class="d">Background and practice.</span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a href="prototype.html"><span class="t"><i style="--pc:var(--c-mustard)"></i>Unity Project</span><span class="d">Interactive Spatial Drawing Assistant: a prototype that measures and supports drawing in 3D space.</span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a href="artworks.html"><span class="t"><i style="--pc:var(--c-terra)"></i>Artworks</span><span class="d">Drawings and stand-alone pieces.</span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a href="projects.html"><span class="t"><i style="--pc:var(--c-navy)"></i>Projects</span><span class="d">Six series: digital portraits, Biophilia, Rocks, Mountains, charcoal interiors, and Femme.</span><span class="go" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </main>
@@ -352,5 +382,15 @@
   </div>
 </footer>
 
+<script>
+/* If the browser blocks autoplay, show play controls instead of a frozen picture. */
+document.querySelectorAll('video[autoplay]').forEach(function (v) {
+  var p = v.play && v.play();
+  if (p && p.catch) { p.catch(function () { v.controls = true; }); }
+});
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video.hero-vid').forEach(function (v) { v.pause(); v.removeAttribute('autoplay'); });
+}
+</script>
 </body>
 </html>
