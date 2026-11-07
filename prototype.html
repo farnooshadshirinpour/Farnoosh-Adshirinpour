@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unity Project | Farnoosh Adshirinpour</title>
 <meta name="description" content="Interactive Spatial Drawing Assistant: a Unity 6 and C# prototype that measures and supports spatial drawing, with observations from testing.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
 <style>
   @font-face { font-family: 'Farnoosh Hand'; src: url('farnoosh-hand.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
   html { color-scheme: light; }
@@ -27,8 +27,8 @@
     --c-navy: #1E3970;  --c-teal: #699497;  --c-grey: #9A988C;  --c-taupe: #B4A3A6;
     --c-ink: #372F2D;   --c-cream: #FBF5D3; --c-lime: #C2C760;
     --font-display: 'Farnoosh Hand', 'Caveat', 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive;
-    --font-body: var(--font-display);
-    --font-mono: var(--font-display);
+    --font-body: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --font-mono: var(--font-body);
     --wob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='9'%3E%3Cpath d='M0 4.5 C18 2 36 7 58 4.2 S98 2 120 4.8 S170 7 192 4 S210 3 220 4.5' fill='none' stroke='%23372F2D' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
     --wob2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='9'%3E%3Cpath d='M0 4.6 C22 2.2 40 6.8 66 4 S112 2.4 140 5 S196 6.8 224 3.8 S248 3.4 260 4.6' fill='none' stroke='%23372F2D' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
     --squig: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='12'%3E%3Cpath d='M0 7 C7 1 13 1 20 7 S33 13 40 7 S53 1 60 7' fill='none' stroke='%23B86B44' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -262,6 +262,125 @@
   .foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 28px; }
   .foot p { max-width: none; }
 
+  /* ---------- v7: readable text. Handwriting only for big titles. ---------- */
+  body { font-size: 1.2rem; line-height: 1.6; -webkit-text-stroke: 0; letter-spacing: 0; word-spacing: 0; }
+  p { max-width: 60ch; }
+  h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.25; letter-spacing: 0; word-spacing: 0; }
+  .mono { font-family: var(--font-body); font-style: italic; font-size: 1.05rem; letter-spacing: 0; color: var(--muted); line-height: 1.4; }
+  .mono b { font-weight: 600; font-style: normal; }
+  code { font-family: var(--font-body); font-weight: 600; }
+  .hand-note { font-size: 1.6rem; max-width: 30ch; }
+  .brand { font-size: 2.2rem; }
+  nav a { font-family: var(--font-body); font-weight: 500; font-size: 1.12rem; letter-spacing: .01em; }
+  .h-side .tag { font-family: var(--font-body); font-weight: 500; font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -0.01em; word-spacing: 0; }
+  .h-side p.intro { font-size: 1.25rem; }
+  .p-sub { font-size: 1.3rem; max-width: 46ch; }
+  .hand-line { font-family: var(--font-body); font-style: italic; font-size: 1.4rem; line-height: 1.5; }
+  .about .text { font-size: 1.28rem; line-height: 1.65; }
+  .glance dt { font-family: var(--font-body); font-style: italic; font-size: 1.02rem; }
+  .glance dd { font-size: 1.18rem; line-height: 1.35; }
+  .index .d { font-size: 1.12rem; line-height: 1.45; }
+  .feature .f-cap { font-family: var(--font-body); font-style: italic; font-size: 1rem; -webkit-text-stroke: 0; }
+  .feature .f-txt p { font-size: 1.2rem; }
+  .target i { font-family: var(--font-body); font-weight: 600; font-size: 1rem; }
+  .plate figcaption { font-family: var(--font-body); font-style: italic; font-size: 1rem; letter-spacing: 0; line-height: 1.35; }
+  .intro-txt { font-size: 1.28rem; line-height: 1.6; max-width: 60ch; }
+  .chips a { font-family: var(--font-body); font-weight: 500; font-size: 1.15rem; }
+  .next a { font-family: var(--font-body); font-weight: 600; font-size: 1.2rem; }
+  .foot { -webkit-text-stroke: 0; }
+  .foot .mono { font-size: 1.02rem; color: var(--c-cream); }
+  .note, .note-line { font-size: 1.02rem; }
+  th, td { font-size: 1.12rem; } th { font-family: var(--font-body); font-weight: 600; font-size: 1rem; }
+  /* ---------- v7: readable text + prototype showcase ---------- */
+  .s-label, .s-edge, .s-d, .c-t, .c-v, .c-g { font-family: var(--font-body); }
+  .s-label { font-size: 13px; } .s-edge { font-size: 13px; font-style: italic; } .s-d { font-size: 17px; font-style: italic; }
+  .c-t { font-size: 12.5px; } .c-v { font-size: 13px; } .c-g { font-size: 15px; font-weight: 600; }
+  .pp h2 em { color: var(--accent); }
+  .pp-hero { position: relative; background: var(--c-navy); color: var(--c-cream); padding-block: 56px 84px; }
+  .pp-hero .wrap { position: relative; z-index: 2; display: grid; gap: 22px; }
+  .pp-eyebrow { font-style: italic; font-size: 1.1rem; color: #E6D9A8; }
+  .pp-title { font-size: clamp(3.2rem, 7.4vw, 6.6rem); line-height: .9; max-width: 17ch; padding-bottom: .12em; color: var(--c-cream); -webkit-text-stroke: 0; }
+  .pp-title em { color: var(--c-mustard); font-style: normal; }
+  .pp-lead { font-size: 1.45rem; line-height: 1.45; max-width: 36ch; color: var(--c-cream); }
+  .pp-facts { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 14px; }
+  .pp-facts li { display: grid; gap: 2px; padding: 12px 18px 12px; border: 2px dashed rgba(251, 245, 211, .5); border-radius: var(--blob); min-width: 8.5rem; }
+  .pp-facts b { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.1; }
+  .pp-facts span { font-style: italic; font-size: .98rem; color: #E6D9A8; }
+  .pp-video { position: relative; margin: 26px auto 0; max-width: 62rem; width: 100%; display: grid; gap: 14px; }
+  .pp-video .tape { top: -13px; left: 18%; margin-left: 0; --tape: rgba(251, 245, 211, .85); }
+  .pp-video .shot { border-width: 10px; box-shadow: 0 18px 34px -12px rgba(0,0,0,.55); }
+  .pp-video figcaption { font-style: italic; font-size: 1rem; color: #E6D9A8; max-width: 70ch; padding-top: 6px; line-height: 1.45; }
+  .pp-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 22px; z-index: 1; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='22'%3E%3Cpath d='M0 22 V11 C18 4 36 16 58 10 S98 5 120 11 S170 16 192 8 S210 6 220 11 V22 Z' fill='%23FBF5D3'/%3E%3C/svg%3E") repeat-x bottom / 220px 22px; }
+  .pp-h { font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1; margin-bottom: 26px; }
+  .pp-idea { padding-block: 70px 70px; }
+  .pp-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 28px; margin-bottom: 44px; }
+  .pp-step { position: relative; background: #FFFEF6; border: 2px solid var(--fg); border-radius: var(--blob); padding: 30px 26px 26px; display: grid; gap: 6px; align-content: start; box-shadow: 0 12px 22px -14px rgba(55,47,45,.45); }
+  .pp-step:nth-child(2) { transform: rotate(.7deg); margin-top: 18px; } .pp-step:nth-child(1) { transform: rotate(-.6deg); } .pp-step:nth-child(3) { transform: rotate(-.3deg); margin-top: 8px; }
+  .pp-step .tape { top: -12px; left: 50%; margin-left: -2.7rem; --tape: color-mix(in srgb, var(--pc) 70%, var(--c-cream)); }
+  .pp-step .n { font-family: var(--font-body); font-weight: 600; font-size: 2.6rem; line-height: 1; color: var(--accent); }
+  .pp-step h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.5rem; line-height: 1.2; -webkit-text-stroke: 0; }
+  .pp-step p { font-size: 1.12rem; line-height: 1.55; }
+  .pp-prose p { font-size: 1.3rem; line-height: 1.6; max-width: 56ch; }
+  .pp-geo { padding-block: 40px 90px; }
+  .pp-geo-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px 64px; align-items: start; }
+  .pp-diagram { margin: 0; display: grid; gap: 12px; background: #FFFEF6; padding: 18px 18px 14px; border: 2px solid var(--fg); border-radius: var(--blob2); }
+  .pp-diagram svg { display: block; width: 100%; height: auto; }
+  .pp-diagram figcaption, .pp-chart figcaption { font-style: italic; font-size: 1rem; line-height: 1.45; color: var(--muted); max-width: 52ch; }
+  .pp-diagram figcaption b, .pp-chart figcaption b { font-style: normal; font-weight: 600; color: var(--pen); margin-right: 8px; }
+  .trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace 9s ease-in-out infinite; }
+  .dmark { opacity: 0; animation: dm 9s ease-in-out infinite; }
+  @keyframes trace { 0% { stroke-dashoffset: 1; opacity: 1; } 58% { stroke-dashoffset: 0; opacity: 1; } 90% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+  @keyframes dm { 0%, 58% { opacity: 0; } 68%, 90% { opacity: 1; } 100% { opacity: 0; } }
+  .pp-list { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 0; }
+  .pp-list li { counter-increment: s; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1.5px dashed var(--rule); font-size: 1.15rem; line-height: 1.55; }
+  .pp-list li:first-child { border-top: 0; padding-top: 0; }
+  .pp-list li::before { content: counter(s); font-family: var(--font-body); font-weight: 600; font-size: 1.7rem; color: var(--accent); line-height: 1.1; }
+  .pp-tech { background: var(--c-olive); color: var(--c-cream); padding-block: 70px 80px; position: relative; }
+  .pp-tech .pp-h em { color: var(--c-mustard); }
+  .pp-spec { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+  .pp-spec > div { display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: 4px 18px; padding: 14px 0; border-top: 1.5px dashed rgba(251, 245, 211, .4); }
+  .pp-spec dt { font-style: italic; color: #F0E6B8; font-size: 1.02rem; padding-top: 2px; }
+  .pp-spec dd { margin: 0; font-size: 1.15rem; line-height: 1.5; }
+  .pp-spec code, .pp-tech code { color: var(--c-cream); font-family: var(--font-body); font-weight: 600; }
+  .pp-test { padding-block: 80px 70px; }
+  .pp-lead2 { font-size: 1.3rem; max-width: 56ch; margin-bottom: 30px; }
+  .pp-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-bottom: 56px; }
+  .stat { display: grid; gap: 8px; align-content: start; padding: 22px 24px 20px; background: #FFFEF6; border: 2px solid var(--fg); border-radius: var(--blob); box-shadow: 0 12px 22px -14px rgba(55,47,45,.45); }
+  .stat:nth-child(2) { transform: rotate(.6deg); } .stat:nth-child(1) { transform: rotate(-.5deg); }
+  .stat b { font-family: var(--font-body); font-weight: 600; font-size: clamp(2.4rem, 4.4vw, 3.4rem); line-height: 1; color: var(--accent); }
+  .stat b small { font-size: .45em; font-weight: 500; color: var(--muted); }
+  .stat span { font-size: 1.08rem; line-height: 1.45; }
+  .pp-two { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 36px 56px; align-items: start; margin-bottom: 46px; }
+  .pp-chart { margin: 0; display: grid; gap: 12px; }
+  .pp-chart svg { display: block; width: 100%; height: auto; }
+  .pp-obs { display: grid; gap: 0; }
+  .pp-obs article { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 12px; padding: 18px 0; border-top: 1.5px dashed var(--rule); }
+  .pp-obs article:first-child { border-top: 0; padding-top: 0; }
+  .pp-obs .n { font-family: var(--font-body); font-weight: 600; font-size: 1.2rem; color: var(--accent); padding-top: 4px; }
+  .pp-obs h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.22rem; line-height: 1.3; margin-bottom: 4px; -webkit-text-stroke: 0; }
+  .pp-obs p { font-size: 1.08rem; line-height: 1.55; }
+  .pp-test .note { margin-top: 10px; }
+  .pp-next { padding-block: 40px 20px; background: var(--wob2) repeat-x 0 0 / 260px 9px; }
+  .pp-ideas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 40px; margin-bottom: 16px; }
+  .pp-ideas p { font-size: 1.15rem; line-height: 1.55; }
+  .pp-ideas b { font-weight: 600; color: var(--accent); }
+  .pp .next { margin-top: 26px; }
+  @media (max-width: 900px) {
+    .pp-steps, .pp-stats, .pp-ideas { grid-template-columns: minmax(0, 1fr); }
+    .pp-step:nth-child(n), .stat:nth-child(n) { transform: none; margin-top: 0; }
+    .pp-geo-in, .pp-two { grid-template-columns: minmax(0, 1fr); }
+    .pp-spec { grid-template-columns: minmax(0, 1fr); }
+
+  }
+  @media (max-width: 640px) {
+    .pp-spec > div { grid-template-columns: minmax(0, 1fr); }
+    .pp-video .shot { border-width: 6px; }
+    .pp-lead { font-size: 1.3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trace { animation: none; stroke-dashoffset: 0; } .dmark { animation: none; opacity: 1; }
+  }
+
   @media (max-width: 900px) {
     .feature .f-txt, .feature .f-vid { grid-column: 1 / -1; }
     .h-side { grid-column: 1 / -1; order: 2; padding-top: 28px; grid-template-columns: minmax(0, 1fr) minmax(0, 12rem); align-items: start; gap: 24px; }
@@ -278,7 +397,7 @@
     .index .go { grid-column: 2; grid-row: 1; }
   }
   @media (max-width: 640px) {
-    body { font-size: 1.4rem; }
+    body { font-size: 1.12rem; }
     .wall { gap: 48px 16px; }
     .plate { grid-column: 1 / -1; margin-top: 0; }
     .plate:nth-child(even) { width: 84%; margin-left: auto; }
@@ -317,81 +436,77 @@
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <div class="p-head">
-      <i class="mark" style="--pc:var(--c-mustard)"></i>
-      <div class="top"><span class="mono">Unity project</span><span class="mono">Unity 6 &middot; C#</span></div>
-      <h1 class="p-title">Interactive <em>Spatial</em> Drawing Assistant</h1>
-      <p class="p-sub">A prototype that measures how accurately a user draws in a 3D scene and gives feedback while they draw.</p>
-    </div>
-
-    <section class="row first">
-      <div class="label"><span class="mono">Overview</span></div>
-      <div class="body">
-        <p>The prototype treats drawing as an interaction that a system can represent, measure, and support. A user traces the four sides of a predefined rectangle in a 3D scene. The system compares each stroke with its target edge, records how far the stroke deviates, and reports feedback in real time while the user draws.</p>
-        <p>It carries the perspective, form, and depth I work with as a painter into a computational setting, and is a first step toward investigating how real-time feedback can support spatial drawing.</p>
-      </div>
-    </section>
-  </div>
-
-  <section class="blk" style="--band:#1E3970; --band-ink:#FBF5D3; --band-muted:#E6D9A8;">
+<main class="pp">
+  <section class="pp-hero">
     <div class="wrap">
-      <div class="row">
-        <div class="label"><span class="mono">Demonstration</span></div>
-        <div class="body full">
-          <figure class="fig">
-            <div class="shot">
-              <video controls preload="metadata" playsinline poster="demo-poster.jpg">
-                <source src="demo.mp4" type="video/mp4">
-                Your browser cannot play this video. <a href="demo.mp4">Open the video file</a>.
-              </video>
-            </div>
-            <figcaption><b>Fig. 1</b>Screen recording of the prototype in Unity 6. The game view (left) shows the rectangle being drawn with the mouse; the scene view (right) shows the target in 3D space. Deviation and feedback messages appear in the console as the stroke is drawn.</figcaption>
-          </figure>
+      <span class="pp-eyebrow">Unity project &middot; Unity 6 &middot; C#</span>
+      <h1 class="pp-title">Interactive <em>Spatial</em> Drawing Assistant</h1>
+      <p class="pp-lead">A prototype that measures how accurately a person draws in a 3D scene, and gives feedback while they draw.</p>
+      <ul class="pp-facts">
+        <li><b>Unity 6</b><span>engine</span></li>
+        <li><b>C#</b><span>language</span></li>
+        <li><b>4 &times; 4</b><span>unit target rectangle</span></li>
+        <li><b>Live</b><span>feedback while drawing</span></li>
+      </ul>
+      <figure class="pp-video">
+        <i class="tape" aria-hidden="true"></i>
+        <div class="shot">
+          <video controls preload="metadata" playsinline poster="demo-poster.jpg" width="1600" height="940">
+            <source src="demo.mp4" type="video/mp4">
+            Your browser cannot play this video. <a href="demo.mp4">Open the video file</a>.
+          </video>
         </div>
+        <figcaption>Screen recording of the prototype in Unity 6. The game view (left) shows the rectangle being drawn with the mouse; the scene view (right) shows the target in 3D space. Deviation and feedback messages appear in the console as the stroke is drawn.</figcaption>
+      </figure>
+    </div>
+    <div class="pp-wave" aria-hidden="true"></div>
+  </section>
+
+  <section class="pp-idea">
+    <div class="wrap">
+      <h2 class="pp-h">How it <em>works</em></h2>
+      <div class="pp-steps">
+        <article class="pp-step" style="--pc:var(--c-pink)"><i class="tape" aria-hidden="true"></i><span class="n">1</span><h3>Draw</h3><p>The user traces the four sides of a predefined rectangle in a 3D scene, using the mouse.</p></article>
+        <article class="pp-step" style="--pc:var(--c-mustard)"><i class="tape" aria-hidden="true"></i><span class="n">2</span><h3>Measure</h3><p>Each stroke is compared with its target edge in 3D coordinates, and the deviation is recorded.</p></article>
+        <article class="pp-step" style="--pc:var(--c-teal)"><i class="tape" aria-hidden="true"></i><span class="n">3</span><h3>Respond</h3><p>Deviation and suggestions are reported in real time, while the stroke is still being drawn.</p></article>
+      </div>
+      <div class="pp-prose">
+        <p>The prototype treats drawing as an interaction that a system can represent, measure, and support. It carries the perspective, form, and depth I work with as a painter into a computational setting, and is a first step toward investigating how real-time feedback can support spatial drawing.</p>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <section class="row" style="border-top:0">
-      <div class="label"><span class="mono">Task geometry</span></div>
-      <div class="body">
-        <figure class="fig diagram">
-          <svg viewBox="0 0 360 330" role="img" aria-label="Schematic of the drawing task: a rectangle with corners A, B, C and D, a hand-drawn stroke around it, and a marker showing the distance d between the stroke and the target edge.">
-            <defs>
-              <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="translate(0 10)">
-                <path d="M30 0H0V30" fill="none" class="s-grid" stroke-width="0.6"/>
-              </pattern>
-            </defs>
-            <rect x="0" y="0" width="360" height="330" fill="url(#grid)"/>
-            <rect x="60" y="40" width="240" height="240" fill="none" class="s-target" stroke-width="1.2"/>
-            <path d="M60 41 C90 47 120 33 160 40 S230 47 262 39 S292 41 300 40 C304 70 316 110 313 160 C310 205 296 240 300 280 C260 274 220 288 170 281 S100 276 60 280 C52 240 46 190 49 160 S66 80 60 40" fill="none" class="s-stroke" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M300 160H313" fill="none" class="s-dim" stroke-width="1.2"/>
-            <circle cx="60" cy="40" r="3.5" class="s-point"/>
-            <circle cx="300" cy="40" r="3.5" class="s-point"/>
-            <circle cx="300" cy="280" r="3.5" class="s-point"/>
-            <circle cx="60" cy="280" r="3.5" class="s-point"/>
-            <text x="60" y="26" text-anchor="start" class="s-label">A (&minus;2, 2, 5)</text>
-            <text x="300" y="26" text-anchor="end" class="s-label">B (2, 2, 5)</text>
-            <text x="300" y="304" text-anchor="end" class="s-label">C (2, &minus;2, 5)</text>
-            <text x="60" y="304" text-anchor="start" class="s-label">D (&minus;2, &minus;2, 5)</text>
-            <text x="180" y="66" text-anchor="middle" class="s-edge">AB</text>
-            <text x="276" y="164" text-anchor="end" class="s-edge">BC</text>
-            <text x="180" y="266" text-anchor="middle" class="s-edge">CD</text>
-            <text x="84" y="164" text-anchor="start" class="s-edge">DA</text>
-            <text x="323" y="165" class="s-d">d</text>
-          </svg>
-          <figcaption><b>Fig. 2</b>The dark rectangle is the target, the terracotta line is an illustrative stroke, and d is the distance from a stroke point to the target edge.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="label"><span class="mono">Method</span></div>
-      <div class="body">
-        <ol class="steps">
+  <section class="pp-geo">
+    <div class="wrap pp-geo-in">
+      <figure class="pp-diagram">
+        <svg viewBox="0 0 360 330" role="img" aria-label="Animated schematic of the drawing task: a stroke is traced around a rectangle with corners A, B, C and D, then a marker shows the distance d between the stroke and the target edge.">
+          <defs>
+            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="translate(0 10)">
+              <path d="M30 0H0V30" fill="none" class="s-grid" stroke-width="0.6"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="360" height="330" fill="url(#grid)"/>
+          <rect x="60" y="40" width="240" height="240" fill="none" class="s-target" stroke-width="1.4"/>
+          <path pathLength="1" d="M60 41 C90 47 120 33 160 40 S230 47 262 39 S292 41 300 40 C304 70 316 110 313 160 C310 205 296 240 300 280 C260 274 220 288 170 281 S100 276 60 280 C52 240 46 190 49 160 S66 80 60 40" fill="none" class="trace s-stroke" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="dmark"><path d="M300 160H313" fill="none" class="s-dim" stroke-width="1.4"/><text x="323" y="165" class="s-d">d</text></g>
+          <circle cx="60" cy="40" r="3.5" class="s-point"/>
+          <circle cx="300" cy="40" r="3.5" class="s-point"/>
+          <circle cx="300" cy="280" r="3.5" class="s-point"/>
+          <circle cx="60" cy="280" r="3.5" class="s-point"/>
+          <text x="60" y="26" text-anchor="start" class="s-label">A (&minus;2, 2, 5)</text>
+          <text x="300" y="26" text-anchor="end" class="s-label">B (2, 2, 5)</text>
+          <text x="300" y="304" text-anchor="end" class="s-label">C (2, &minus;2, 5)</text>
+          <text x="60" y="304" text-anchor="start" class="s-label">D (&minus;2, &minus;2, 5)</text>
+          <text x="180" y="66" text-anchor="middle" class="s-edge">AB</text>
+          <text x="276" y="164" text-anchor="end" class="s-edge">BC</text>
+          <text x="180" y="266" text-anchor="middle" class="s-edge">CD</text>
+          <text x="84" y="164" text-anchor="start" class="s-edge">DA</text>
+        </svg>
+        <figcaption><b>Fig. 1</b>Task geometry. The dark rectangle is the target, the terracotta line is an illustrative stroke, and d is the distance from a stroke point to the target edge.</figcaption>
+      </figure>
+      <div class="pp-method">
+        <h2 class="pp-h">Method</h2>
+        <ol class="pp-list">
           <li><span>The scene defines the target as four points on one plane. Each side is 4 Unity units long.</span></li>
           <li><span>The user draws each edge with the mouse. Strokes are captured as point sequences and rendered with Unity&rsquo;s LineRenderer as a separate <code>UserDrawing</code> line, so the drawn stroke stays visually distinct from the target.</span></li>
           <li><span>The system measures the Euclidean distance between the drawn points and the corresponding target edge in 3D coordinates.</span></li>
@@ -399,65 +514,82 @@
           <li><span>Corner-tolerance checks and side-completion detection track whether the user is progressing through the rectangle in order.</span></li>
         </ol>
       </div>
-    </section>
-  </div>
-
-  <section class="blk" style="--band:#646143; --band-ink:#FBF5D3; --band-muted:#F0E6B8;">
-    <div class="wrap">
-      <div class="row">
-        <div class="label"><span class="mono">Technical notes</span></div>
-        <div class="body">
-          <dl class="spec">
-            <div><dt>Engine</dt><dd>Unity 6</dd></div>
-            <div><dt>Language</dt><dd>C#</dd></div>
-            <div><dt>Stroke rendering</dt><dd>LineRenderer</dd></div>
-            <div><dt>Target</dt><dd>Rectangle, 4 &times; 4 Unity units, on the plane z = 5</dd></div>
-            <div><dt>Input</dt><dd>Mouse, drawing on a planar surface inside a 3D scene</dd></div>
-            <div><dt>Feedback</dt><dd>Console messages while drawing, such as largest deviation, proximity to a corner, and suggestions</dd></div>
-            <div><dt>Measures</dt><dd>Average and maximum deviation for each edge</dd></div>
-            <div><dt>Parameters</dt><dd><code>laneWidth = 0.20</code>, <code>cornerTolerance = 0.30</code>, <code>suggestionsEnabled</code></dd></div>
-          </dl>
-        </div>
-      </div>
     </div>
   </section>
 
-  <div class="wrap end-pad">
-    <section class="row" style="border-top:0">
-      <div class="label"><span class="mono">Testing</span></div>
-      <div class="body">
-        <h2>Observations from <em>testing</em></h2>
-        <p>I tested the prototype with my own drawing attempts, logging deviation for each edge and refining the interaction between sessions.</p>
+  <section class="pp-tech">
+    <div class="wrap">
+      <h2 class="pp-h">Technical <em>notes</em></h2>
+      <dl class="pp-spec">
+        <div><dt>Engine</dt><dd>Unity 6</dd></div>
+        <div><dt>Language</dt><dd>C#</dd></div>
+        <div><dt>Stroke rendering</dt><dd>LineRenderer</dd></div>
+        <div><dt>Target</dt><dd>Rectangle, 4 &times; 4 Unity units, on the plane z = 5</dd></div>
+        <div><dt>Input</dt><dd>Mouse, drawing on a planar surface inside a 3D scene</dd></div>
+        <div><dt>Feedback</dt><dd>Console messages while drawing: largest deviation, proximity to a corner, and suggestions</dd></div>
+        <div><dt>Measures</dt><dd>Average and maximum deviation for each edge</dd></div>
+        <div><dt>Parameters</dt><dd><code>laneWidth = 0.20</code>, <code>cornerTolerance = 0.30</code>, <code>suggestionsEnabled</code></dd></div>
+      </dl>
+    </div>
+  </section>
 
-        <figure class="fig chart">
-          <svg viewBox="0 0 640 330" role="img" aria-label="Bar chart of average and maximum deviation in centimetres for each edge in two tests."><rect x="96" y="8" width="10" height="10" class="c-avg"/><text x="112" y="17" class="c-t">AVERAGE</text><rect x="190" y="8" width="10" height="10" class="c-max"/><text x="206" y="17" class="c-t">MAXIMUM</text><line x1="96.0" y1="38" x2="96.0" y2="290" class="c-axis"/><text x="96.0" y="306" text-anchor="middle" class="c-t">0</text><line x1="224.5" y1="38" x2="224.5" y2="290" class="c-grid"/><text x="224.5" y="306" text-anchor="middle" class="c-t">4</text><line x1="353.0" y1="38" x2="353.0" y2="290" class="c-grid"/><text x="353.0" y="306" text-anchor="middle" class="c-t">8</text><line x1="481.5" y1="38" x2="481.5" y2="290" class="c-grid"/><text x="481.5" y="306" text-anchor="middle" class="c-t">12</text><line x1="610.0" y1="38" x2="610.0" y2="290" class="c-grid"/><text x="610.0" y="306" text-anchor="middle" class="c-t">16</text><text x="610" y="326" text-anchor="end" class="c-t">DEVIATION (CM)</text><text x="0" y="57" class="c-g">AB</text><text x="0" y="71" class="c-t">TEST 1</text><rect x="96" y="46" width="112.4" height="11" class="c-avg"/><text x="214.4" y="56" class="c-v">3.5</text><rect x="96" y="61" width="199.2" height="11" class="c-max"/><text x="301.2" y="71" class="c-v">6.2</text><text x="0" y="107" class="c-g">BC</text><text x="0" y="121" class="c-t">TEST 1</text><rect x="96" y="96" width="118.9" height="11" class="c-avg"/><text x="220.9" y="106" class="c-v">3.7</text><rect x="96" y="111" width="224.9" height="11" class="c-max"/><text x="326.9" y="121" class="c-v">7.0</text><text x="0" y="157" class="c-g">CD</text><text x="0" y="171" class="c-t">TEST 1</text><rect x="96" y="146" width="67.5" height="11" class="c-avg"/><text x="169.5" y="156" class="c-v">2.1</text><rect x="96" y="161" width="321.2" height="11" class="c-max"/><text x="423.2" y="171" class="c-v">10.0</text><text x="0" y="207" class="c-g">DA</text><text x="0" y="221" class="c-t">TEST 1</text><rect x="96" y="196" width="167.1" height="11" class="c-avg"/><text x="269.1" y="206" class="c-v">5.2</text><rect x="96" y="211" width="456.2" height="11" class="c-max"/><text x="558.2" y="221" class="c-v">14.2</text><text x="0" y="257" class="c-g">BC</text><text x="0" y="271" class="c-t">TEST 2</text><rect x="96" y="246" width="302.0" height="11" class="c-avg"/><text x="404.0" y="256" class="c-v">9.4</text><rect x="96" y="261" width="417.6" height="11" class="c-max"/><text x="519.6" y="271" class="c-v">13.0</text></svg>
-          <figcaption><b>Fig. 3</b>Average and maximum deviation for each edge. Edge BC was repeated in a second test.</figcaption>
-        </figure>
+  <section class="pp-test">
+    <div class="wrap">
+      <h2 class="pp-h">Observations from <em>testing</em></h2>
+      <p class="pp-lead2">I tested the prototype with my own drawing attempts, logging deviation for each edge and refining the interaction between sessions.</p>
 
-        <div>
-          <div class="obs"><span class="n">N1</span><div><h3>Average and maximum capture different things</h3><p>In the first test, edge CD had an average deviation of 2.1 cm but a maximum of 10.0 cm. A stroke can be accurate overall and still contain a single large error, which an average alone would conceal.</p></div></div>
-          <div class="obs"><span class="n">N2</span><div><h3>Reaching a target is not following the path</h3><p>In some attempts the system advanced to the next side as soon as the stroke reached a corner, even when the preceding stroke had drifted from the path. Completion checks therefore need to consider the movement as well as the endpoint.</p></div></div>
-          <div class="obs"><span class="n">N3</span><div><h3>Accuracy varied between attempts</h3><p>Edge BC averaged 3.7 cm in the first test and 9.4 cm in the second, and its maximum rose from 7.0 cm to 13.0 cm.</p></div></div>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>Test</th><th>Edge</th><th class="num">Average (cm)</th><th class="num">Maximum (cm)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td>AB</td><td class="num">3.5</td><td class="num">6.2</td></tr>
-              <tr><td>1</td><td>BC</td><td class="num">3.7</td><td class="num">7.0</td></tr>
-              <tr><td>1</td><td>CD</td><td class="num">2.1</td><td class="num">10.0</td></tr>
-              <tr><td>1</td><td>DA</td><td class="num">5.2</td><td class="num">14.2</td></tr>
-              <tr><td>2</td><td>BC</td><td class="num">9.4</td><td class="num">13.0</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="note">Values were logged by the prototype during my own drawing attempts. They are exploratory observations, not the results of a user study.</p>
+      <div class="pp-stats">
+        <div class="stat"><b>2.1<small> cm</small></b><span>average deviation on edge CD, test 1</span></div>
+        <div class="stat"><b>10.0<small> cm</small></b><span>maximum on the same edge: one large error that the average hides</span></div>
+        <div class="stat"><b>3.7 &rarr; 9.4<small> cm</small></b><span>average on edge BC, from test 1 to test 2</span></div>
       </div>
-    </section>
-  </div>
+
+      <div class="pp-two">
+        <figure class="pp-chart">
+          <svg viewBox="0 0 640 330" role="img" aria-label="Bar chart of average and maximum deviation in centimetres for each edge in two tests."><rect x="96" y="8" width="10" height="10" class="c-avg"/><text x="112" y="17" class="c-t">AVERAGE</text><rect x="190" y="8" width="10" height="10" class="c-max"/><text x="206" y="17" class="c-t">MAXIMUM</text><line x1="96.0" y1="38" x2="96.0" y2="290" class="c-axis"/><text x="96.0" y="306" text-anchor="middle" class="c-t">0</text><line x1="224.5" y1="38" x2="224.5" y2="290" class="c-grid"/><text x="224.5" y="306" text-anchor="middle" class="c-t">4</text><line x1="353.0" y1="38" x2="353.0" y2="290" class="c-grid"/><text x="353.0" y="306" text-anchor="middle" class="c-t">8</text><line x1="481.5" y1="38" x2="481.5" y2="290" class="c-grid"/><text x="481.5" y="306" text-anchor="middle" class="c-t">12</text><line x1="610.0" y1="38" x2="610.0" y2="290" class="c-grid"/><text x="610.0" y="306" text-anchor="middle" class="c-t">16</text><text x="610" y="326" text-anchor="end" class="c-t">DEVIATION (CM)</text><text x="0" y="57" class="c-g">AB</text><text x="0" y="71" class="c-t">TEST 1</text><rect x="96" y="46" width="112.4" height="11" class="c-avg"/><text x="214.4" y="56" class="c-v">3.5</text><rect x="96" y="61" width="199.2" height="11" class="c-max"/><text x="301.2" y="71" class="c-v">6.2</text><text x="0" y="107" class="c-g">BC</text><text x="0" y="121" class="c-t">TEST 1</text><rect x="96" y="96" width="118.9" height="11" class="c-avg"/><text x="220.9" y="106" class="c-v">3.7</text><rect x="96" y="111" width="224.9" height="11" class="c-max"/><text x="326.9" y="121" class="c-v">7.0</text><text x="0" y="157" class="c-g">CD</text><text x="0" y="171" class="c-t">TEST 1</text><rect x="96" y="146" width="67.5" height="11" class="c-avg"/><text x="169.5" y="156" class="c-v">2.1</text><rect x="96" y="161" width="321.2" height="11" class="c-max"/><text x="423.2" y="171" class="c-v">10.0</text><text x="0" y="207" class="c-g">DA</text><text x="0" y="221" class="c-t">TEST 1</text><rect x="96" y="196" width="167.1" height="11" class="c-avg"/><text x="269.1" y="206" class="c-v">5.2</text><rect x="96" y="211" width="456.2" height="11" class="c-max"/><text x="558.2" y="221" class="c-v">14.2</text><text x="0" y="257" class="c-g">BC</text><text x="0" y="271" class="c-t">TEST 2</text><rect x="96" y="246" width="302.0" height="11" class="c-avg"/><text x="404.0" y="256" class="c-v">9.4</text><rect x="96" y="261" width="417.6" height="11" class="c-max"/><text x="519.6" y="271" class="c-v">13.0</text></svg>
+          <figcaption><b>Fig. 2</b>Average and maximum deviation for each edge. Edge BC was repeated in a second test.</figcaption>
+        </figure>
+        <div class="pp-obs">
+          <article><span class="n">N1</span><div><h3>Average and maximum capture different things</h3><p>In the first test, edge CD had an average deviation of 2.1 cm but a maximum of 10.0 cm. A stroke can be accurate overall and still contain a single large error, which an average alone would conceal.</p></div></article>
+          <article><span class="n">N2</span><div><h3>Reaching a target is not following the path</h3><p>In some attempts the system advanced to the next side as soon as the stroke reached a corner, even when the preceding stroke had drifted from the path. Completion checks therefore need to consider the movement as well as the endpoint.</p></div></article>
+          <article><span class="n">N3</span><div><h3>Accuracy varied between attempts</h3><p>Edge BC averaged 3.7 cm in the first test and 9.4 cm in the second, and its maximum rose from 7.0 cm to 13.0 cm.</p></div></article>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Test</th><th>Edge</th><th class="num">Average (cm)</th><th class="num">Maximum (cm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>AB</td><td class="num">3.5</td><td class="num">6.2</td></tr>
+            <tr><td>1</td><td>BC</td><td class="num">3.7</td><td class="num">7.0</td></tr>
+            <tr><td>1</td><td>CD</td><td class="num">2.1</td><td class="num">10.0</td></tr>
+            <tr><td>1</td><td>DA</td><td class="num">5.2</td><td class="num">14.2</td></tr>
+            <tr><td>2</td><td>BC</td><td class="num">9.4</td><td class="num">13.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Values were logged by the prototype during my own drawing attempts. They are exploratory observations, not the results of a user study.</p>
+    </div>
+  </section>
+
+  <section class="pp-next">
+    <div class="wrap">
+      <h2 class="pp-h">Where I want to take it <em>next</em></h2>
+      <div class="pp-ideas">
+        <p><b>With other people.</b> Run a small study that compares drawing with and without real-time feedback.</p>
+        <p><b>Inside the scene.</b> Show the feedback visually in the 3D scene instead of in the console.</p>
+        <p><b>Beyond one plane.</b> Move from a mouse on a flat target to free strokes in 3D space.</p>
+      </div>
+      <p class="note">These are directions I want to explore. They are not built yet.</p>
+      <div class="next">
+        <a href="projects.html">Projects &rarr;</a>
+        <a href="artworks.html">Artworks &rarr;</a>
+        <a href="about.html">About &rarr;</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
